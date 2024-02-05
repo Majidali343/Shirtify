@@ -55,9 +55,9 @@
                             <li>
                                 <a href="{{ url('women') }}">Women Clothing</a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="{{ url('kids') }}">Kids Clothing</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

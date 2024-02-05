@@ -144,11 +144,11 @@
                                         <select class="select-box product-size">
                                             <option value="">Male 2XL</option>
                                             <option value="">Male 3XL</option>
-                                            <option value="">Kids 4</option>
+                                            {{-- <option value="">Kids 4</option>
                                             <option value="">Kids 6</option>
                                             <option value="">Kids 8</option>
                                             <option value="">Kids 10</option>
-                                            <option value="">Kids 12</option>
+                                            <option value="">Kids 12</option> --}}
                                             <option value="">Female Small</option>
                                             <option value="">Male Small</option>
                                             <option value="">Female Medium</option>

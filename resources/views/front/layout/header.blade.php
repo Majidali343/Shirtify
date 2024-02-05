@@ -306,9 +306,9 @@ $sections = \App\Models\Section::sections();
                                     <li>
                                         <a href="{{ url('women') }}">Women Clothing</a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="{{ url('kids') }}">Kids Clothing</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                                 <ul>
                                     <li class="menu-title">ACCOUNT</li>
