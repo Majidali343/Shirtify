@@ -12,7 +12,7 @@ class APIController extends Controller
 {
     // Shiprocket API Integration
     // Shiprocket API Documentation: https://apidocs.shiprocket.in/
-    // Push our 'Multi-vendor E-commerce Application' website orders (from our `orders` database table) to Shiprocket
+    // Push our 'Dressify' website orders (from our `orders` database table) to Shiprocket
     public function pushOrder($id) { // This route/URL/link is: GET http://127.0.0.1:8000/api/push-order/3
         // Get the Order from `orders` table and its order Details from `orders_products` table (using the 'order_items' Relationship)
         $getResults = \App\Models\Order::pushOrder($id);
@@ -26,7 +26,7 @@ class APIController extends Controller
 
 
 
-    // Our Multi-vendor E-commerce Application Website API
+    // Our Dressify Website API
 
     // Get ALL users    Or    Get a SINGLE user (GET)    (depending on if the {id?} Optional Paramter specified or not in the API Endpoint route)    // API Endpoint:    GET http://127.0.0.1:8000/api/users Or GET http://127.0.0.1:8000/api/users/37    // User must send an "Authorization" HTTP Header with all their HTTP Requests with this value (Bearer Token (JWT)): "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFtaXQgR3VwdGEiLCJpYXQiOjE1MTYyMzkwMjJ9.cNrgi6Sso9wvs4GlJmFnA4IqJY4o2QEcKXgshJTjfNg"    
     public function getUsers(Request $request, $id = null) { 

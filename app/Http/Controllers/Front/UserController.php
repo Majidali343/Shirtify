@@ -70,7 +70,7 @@ class UserController extends Controller
                     'code'   => base64_encode($data['email']) // We base64 code the user's $email and send it as a Route Parameter from resources/views/emails/confirmation.blade.php to the 'user/confirm/{code}' route in web.php, then it gets base64 de-coded again in confirmUser() method in Front/UserController.php    // We will use the opposite: base64_decode() in the confirmUser() method to decode the encoded string (encode X decode)
                 ];
                 \Illuminate\Support\Facades\Mail::send('emails.confirmation', $messageData, function ($message) use ($email) { // Sending Mail: https://laravel.com/docs/9.x/mail#sending-mail    // 'emails.confirmation' is the resources/views/emails/confirmation.blade.php file that will be sent as an email    // We pass in all the variables that confirmation.blade.php will use    // https://www.php.net/manual/en/functions.anonymous.php
-                    $message->to($email)->subject('Confirm your Multi-vendor E-commerce Application Account');
+                    $message->to($email)->subject('Confirm your Dressify Account');
                 });
 
                 // Redirect user back with a success message
@@ -86,7 +86,7 @@ class UserController extends Controller
 
                 /*
                 // Send an SMS using an SMS API and cURL    
-                $message = 'Dear customer, you have successfully registered with Multi-vendor E-commerce Application. Login to your account to access orders, addresses and available offers';
+                $message = 'Dear customer, you have successfully registered with Dressify. Login to your account to access orders, addresses and available offers';
                 $mobile = $data['mobile']; // the user's mobile that they entered while submitting the registration form
                 \App\Models\Sms::sendSms($message, $mobile); // Send the SMS
                 */
@@ -218,7 +218,7 @@ class UserController extends Controller
                     // 'code'   => base64_encode($data['email']) // We base64 code the user's $email and send it as a Route Parameter from user_confirmation.blade.php to the 'user/confirm/{code}' route in web.php, then it gets base64 decoded again in confirmUser() method in Front/UserController.php    // we will use the opposite: base64_decode() in the confirmAccount() method (encode X decode)
                 ];
                 \Illuminate\Support\Facades\Mail::send('emails.register', $messageData, function ($message) use ($email) { // Sending Mail: https://laravel.com/docs/9.x/mail#sending-mail    // 'emails.register' is the register.blade.php file inside the 'resources/views/emails' folder that will be sent as an email    // We pass in all the variables that register.blade.php will use    // https://www.php.net/manual/en/functions.anonymous.php
-                    $message->to($email)->subject('Welcome to Multi-vendor E-commerce Application');
+                    $message->to($email)->subject('Welcome to Dressify');
                 });
 
                 // Note: Here, we have TWO options, either redirect user with a success message or Log the user In IMMDEIATELY, AUTOMATICALLY and DIRECTLY
@@ -276,7 +276,7 @@ class UserController extends Controller
                     // 'code'  => base64_encode($data['email']) // We base64 code the user's $email and send it as a Route Parameter from user_confirmation.blade.php to the 'user/confirm/{code}' route in web.php, then it gets base64 decoded again in confirmUser() method in Front/UserController.php    // we will use the opposite: base64_decode() in the confirmUser() method (encode X decode)
                 ];
                 \Illuminate\Support\Facades\Mail::send('emails.user_forgot_password', $messageData, function ($message) use ($email) { // Sending Mail: https://laravel.com/docs/9.x/mail#sending-mail    // 'emails.user_forgot_password' is the resources/views/emails/user_forgot_password.blade.php file inside the 'resources/views/emails' folder that will be sent as an email    // We pass in all the variables that the user_forgot_password.blade.php file will use    // https://www.php.net/manual/en/functions.anonymous.php
-                    $message->to($email)->subject('New Password - Multi-vendor E-commerce Application');
+                    $message->to($email)->subject('New Password - Dressify');
                 });
 
                 // Redirect user with a success message

@@ -80,7 +80,7 @@
                         <ul>
                             <li>
                                 <i class="fas fa-location-arrow u-s-m-r-9"></i>
-                                <span>Multi-vendor E-commerce Application</span>
+                                <span>Dressify</span>
                             </li>
                             <li>
                                 <a href="tel:+201255845857">
@@ -143,7 +143,7 @@
                 </ul>
             </div>
             <p class="copyright-text">Copyright &copy; 2022
-                <a target="_blank" rel="nofollow" href="#">Multi-vendor E-commerce Application</a> | All Right Reserved
+                <a target="_blank" rel="nofollow" href="#">Dressify</a> | All Right Reserved
             </p>
         </div>
     </div>

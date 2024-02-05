@@ -1,4 +1,4 @@
-# Laravel Multi-vendor E-commerce Application (Mega Project)
+# Laravel Dressify (Mega Project)
 Multi-vendor E-commerce is a large-scale project/application built with Laravel framework. The application contains comprehensive and feature-rich modules and functionalities. It is designed to provide a robust platform for businesses to create their online marketplaces, allowing multiple vendors to sell their products and manage their stores within a single platform. Additionally, the application has its own dedicated extensive API, which requires authentication using Laravel Passport package.
 
 Frontend technologies used: jQuery, AJAX, and many JavaScript & jQuery libraries and plugins.
@@ -112,7 +112,7 @@ All application routes & API endpoints are defined in both the **[web.php](route
 ## API Endpoints:
 > ***\*\* Check the application API Collection on my Postman Profile: https://www.postman.com/ahmed-yahya/workspace/my-public-portfolio-postman-workspace/collection/28181483-179adc20-2dcc-426c-a755-5a48da9ca7a4***
 
-> ***\*\* Also, you can test the API Endpoints yourself using Postman. Here is the API's Postman Collection .json file [API Postman Collection file](<Postman Collection of API Endpoints/Multi-vendor E-commerce Application API.postman_collection.json>) that you can download and import into your Postman.***
+> ***\*\* Also, you can test the API Endpoints yourself using Postman. Here is the API's Postman Collection .json file [API Postman Collection file](<Postman Collection of API Endpoints/Dressify API.postman_collection.json>) that you can download and import into your Postman.***
 
 ## Installation & Configuration:
 

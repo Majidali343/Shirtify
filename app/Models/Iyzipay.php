@@ -13,7 +13,7 @@ class Iyzipay extends Model
 
 
 
-    // This method has been copied from    Multi-vendor E-commerce Application\vendor\iyzico\iyzipay-php\samples\config.php    file    
+    // This method has been copied from    Dressify\vendor\iyzico\iyzipay-php\samples\config.php    file    
     public static function options()
     {
         $options = new \Iyzipay\Options();

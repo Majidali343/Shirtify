@@ -22,12 +22,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) { //
 Route::namespace('App\Http\Controllers\API')->group(function() { // Route Groups: https://laravel.com/docs/9.x/routing#route-groups
     // Shiprocket API Integration
     // Shiprocket API Documentation: https://apidocs.shiprocket.in/
-    // Push our 'Multi-vendor E-commerce Application' website orders from our `orders` database table to Shiprocket    
+    // Push our 'Dressify' website orders from our `orders` database table to Shiprocket    
     Route::get('push-order/{id}', 'APIController@pushOrder'); // This route/URL/link is: GET http://127.0.0.1:8000/api/push-order/3    // Route Parameters: Required Parameters: https://laravel.com/docs/9.x/routing#required-parameters
 
 
 
-    // Our Multi-vendor E-commerce Application Website API:
+    // Our Dressify Website API:
 
     // Get ALL users    Or    Get a SINGLE user (GET)    (depending on if the {id?} Optional Paramter specified or not in the API Endpoint route)    // API Endpoint:    GET http://127.0.0.1:8000/api/users Or GET http://127.0.0.1:8000/api/users/37    // User must send an "Authorization" HTTP Header with all their HTTP Requests with this value (Bearer Token (JWT)): "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFtaXQgR3VwdGEiLCJpYXQiOjE1MTYyMzkwMjJ9.cNrgi6Sso9wvs4GlJmFnA4IqJY4o2QEcKXgshJTjfNg"    
     Route::get('users/{id?}', 'APIController@getUsers'); 
