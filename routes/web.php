@@ -257,6 +257,7 @@ Route::namespace('App\Http\Controllers\Front')->group(function() {
     // Render the Contact Us page (front/pages/contact.blade.php) using GET HTTP Requests, or the HTML Form Submission using POST HTTP Requests
     Route::match(['get', 'post'], 'contact', 'CmsController@contact');
     Route::get( 'CustomerService', 'CmsController@customerServices');
+    Route::get( 'Terms', 'CmsController@TermsCondition');
 
     // Add a Newsletter Subscriber email HTML Form Submission in front/layout/footer.blade.php when clicking on the Submit button (using an AJAX Request/Call)
     Route::post('add-subscriber-email', 'NewsletterController@addSubscriber');

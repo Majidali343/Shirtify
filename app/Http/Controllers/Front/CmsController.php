@@ -75,4 +75,8 @@ class CmsController extends Controller
     public function customerServices(){
         return view('front.pages.CustomerService');
     }
+
+    public function TermsCondition(){
+        return view('front.pages.TermsConditions');
+    }
 }
