@@ -89,10 +89,10 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@multi-vendore-commerce.com">
+                                <a href="mailto:info@dressify.com">
                                 <i class="fas fa-envelope u-s-m-r-9"></i>
                                 <span>
-                                info@multi-vendore-commerce.com</span>
+                                info@dressify.com</span>
                                 </a>
                             </li>
                         </ul>

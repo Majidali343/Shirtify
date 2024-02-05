@@ -71,4 +71,8 @@ class CmsController extends Controller
 
         return view('front.pages.contact');
     }
+
+    public function customerServices(){
+        return view('front.pages.CustomerService');
+    }
 }

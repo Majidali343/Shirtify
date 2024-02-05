@@ -2076,13 +2076,13 @@ body {
       color: #d90429; }
       .bottom-footer-wrapper .copyright-text a:hover {
         color: #d90429; }
-  .bottom-footer-wrapper:before {
+  /* .bottom-footer-wrapper:before {
     content: '';
     display: block;
     width: 100%;
     height: 23px;
     margin-bottom: 14px;
-    background: url(../images/payment/pay-3.png) center center no-repeat; }
+    background: url(../images/payment/pay-3.png) center center no-repeat; } */
 
 .social-media-wrapper {
   margin-bottom: 6px; }

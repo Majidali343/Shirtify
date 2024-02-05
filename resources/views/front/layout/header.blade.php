@@ -19,7 +19,7 @@ $sections = \App\Models\Section::sections();
                         Telephone: +201255845857</a>
                     </li>
                     <li>
-                        <a href="mailto:info@multi-vendore-commerce.com">
+                        <a href="mailto:info@dressify.com">
                         <i class="fas fa-envelope u-c-brand u-s-m-r-9"></i>
                         E-mail: info@dressify.com
                         </a>
