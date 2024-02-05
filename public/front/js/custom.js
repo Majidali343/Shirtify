@@ -78,11 +78,11 @@ $(document).ready(function() {
                 console.log(resp);
                 if (resp.discount > 0) { // if there's a discount    // this is the same as:    if (resp['discount'] > 0) {
                     $('.getAttributePrice').html(
-                        '<div class="price"><h4>EGP' + resp.final_price + '</h4></div><div class="original-price"><span>Original Price: </span><span>EGP' + resp.product_price + '</span></div>'
+                        '<div class="price"><h4>RS . ' + resp.final_price + '</h4></div><div class="original-price"><span>Original Price: </span><span>RS . ' + resp.product_price + '</span></div>'
                     ); // Note: resp.product_price    is the same as    resp['product_price']
                 } else { // if there's no discount
                     $('.getAttributePrice').html(
-                        '<div class="price"><h4>EGP' + resp.final_price + '</h4></div>'
+                        '<div class="price"><h4>RS . ' + resp.final_price + '</h4></div>'
                     ); // Note: resp.final_price    is the same as    resp['final_price']
                 }
             },
@@ -547,14 +547,14 @@ $(document).ready(function() {
 
                 
                 if (resp.couponAmount > 0) { // if there's a coupon code submitted and it's valid        // 'couponAmount' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the applyCoupon() method in Front/ProductsController.php
-                    $('.couponAmount').text('EGP' + resp.couponAmount); // 'couponAmount' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the applyCoupon() method in Front/ProductsController.php    
+                    $('.couponAmount').text('RS . ' + resp.couponAmount); // 'couponAmount' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the applyCoupon() method in Front/ProductsController.php    
                 } else {
-                    $('.couponAmount').text('EGP 0');
+                    $('.couponAmount').text('RS .  0');
                 }
 
                 
                 if (resp.grand_total > 0) { // if there's a coupon code submitted and it's valid        // 'grand_total' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the applyCoupon() method in Front/ProductsController.php
-                    $('.grand_total').text('EGP' + resp.grand_total); // 'grand_total' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the applyCoupon() method in Front/ProductsController.php    
+                    $('.grand_total').text('RS . ' + resp.grand_total); // 'grand_total' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the applyCoupon() method in Front/ProductsController.php    
                 }
             },
             error  : function() { // if the AJAX request is unsuccessful
@@ -678,7 +678,7 @@ $(document).ready(function() {
         // alert(shipping_charges);
 
         // Display the Shipping Charges
-        $('.shipping_charges').html('EGP' + shipping_charges);
+        $('.shipping_charges').html('RS . ' + shipping_charges);
 
         // Show the right Payment Methods radio buttons in front/products/checkout.blade.php based on Getting the results of checking if both the COD and Prepaid PIN codes of the user's Delviery Address exist in our both `cod_pincodes` and `prepaid_pincodes` database tables. Check the checkout() method in Front/ProductsController.php and front/products/checkout.blade.php    
         var codpincodeCount     = $(this).attr('codpincodeCount');     // using Custom HTML data attributes (data-*)
@@ -700,14 +700,14 @@ $(document).ready(function() {
         }
 
         // Display the Coupon Amount
-        $('.couponAmount').html('EGP' + coupon_amount);
+        $('.couponAmount').html('RS . ' + coupon_amount);
 
         // Calculate the Grand Total
         var grand_total = parseInt(total_price) + parseInt(shipping_charges) - parseInt(coupon_amount);
         // alert(grand_total);
 
         // Display the Grand Total
-        $('.grand_total').html('EGP' + grand_total);
+        $('.grand_total').html('RS . ' + grand_total);
     });
 
     // PIN code Availability Check: check if the PIN code of the user's Delivery Address exists in our database (in both `cod_pincodes` and `prepaid_pincodes`) or not in front/products/detail.blade.php via AJAX    

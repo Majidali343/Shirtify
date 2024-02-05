@@ -31,9 +31,9 @@
 
             {{-- Static And Dynamic SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php. Check index() method in Front/IndexController.php, listing() method in Front/ProductsController.php, detail() method in Front/ProductsController.php and cart() method in Front/ProductsController.php     --}}
             @if (!empty($meta_title))
-                {{ $meta_title }}
+            Dressify - Fashion clothes
             @else
-                Laravel Multi Vendor E-commerce Template - By Multi-vendor E-commerce Application Channel
+            Dressify - Fashion clothes
             @endif
             
         </title>

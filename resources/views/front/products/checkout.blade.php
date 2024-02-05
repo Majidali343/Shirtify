@@ -124,7 +124,7 @@
                                                             <span class="order-span-quantity">x {{ $item['quantity'] }}</span>
                                                         </td>
                                                         <td>
-                                                            <h6 class="order-h6">EGP{{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }}</h6> {{-- price of all products (after discount (if any)) (= price (after discoutn) * no. of products) --}}
+                                                            <h6 class="order-h6">RS . {{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }}</h6> {{-- price of all products (after discount (if any)) (= price (after discoutn) * no. of products) --}}
                                                         </td>
                                                     </tr>
 
@@ -140,7 +140,7 @@
                                                         <h3 class="order-h3">Subtotal</h3>
                                                     </td>
                                                     <td>
-                                                        <h3 class="order-h3">EGP{{ $total_price }}</h3>
+                                                        <h3 class="order-h3">RS . {{ $total_price }}</h3>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -149,7 +149,7 @@
                                                     </td>
                                                     <td>
                                                         <h6 class="order-h6">
-                                                            <span class="shipping_charges">EGP0</span>
+                                                            <span class="shipping_charges">RS . 0</span>
                                                         </h6>
                                                     </td>
                                                 </tr>
@@ -161,9 +161,9 @@
                                                         <h6 class="order-h6">
                                                             
                                                             @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- We stored the 'couponAmount' in a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
-                                                                <span class="couponAmount">EGP{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}</span>
+                                                                <span class="couponAmount">RS . {{ \Illuminate\Support\Facades\Session::get('couponAmount') }}</span>
                                                             @else
-                                                                EGP0
+                                                                RS . 0
                                                             @endif
                                                         </h6>
                                                     </td>
@@ -174,7 +174,7 @@
                                                     </td>
                                                     <td>
                                                         <h3 class="order-h3">
-                                                            <strong class="grand_total">EGP{{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</strong> {{-- We create the 'grand_total' CSS class to use it as a handle for AJAX inside    $('#applyCoupon').submit();    function in front/js/custom.js --}} {{-- We stored the 'couponAmount' a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
+                                                            <strong class="grand_total">RS . {{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</strong> {{-- We create the 'grand_total' CSS class to use it as a handle for AJAX inside    $('#applyCoupon').submit();    function in front/js/custom.js --}} {{-- We stored the 'couponAmount' a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
                                                         </h3>
                                                     </td>
                                                 </tr>
@@ -186,17 +186,17 @@
                                             <input type="radio" class="radio-box" name="payment_gateway" id="cash-on-delivery" value="COD">
                                             <label class="label-text" for="cash-on-delivery">Cash on Delivery</label>
                                         </div>
-                                        <div class="u-s-m-b-13 prepaidMethod"> {{-- We added the prepaidMethod CSS class to disable that payment method (check front/js/custom.js) if the PIN code of that user's Delivery Address doesn't exist in our `prepaid_pincodes` database table --}}
+                                        {{-- <div class="u-s-m-b-13 prepaidMethod"> 
                                             <input type="radio" class="radio-box" name="payment_gateway" id="paypal" value="Paypal">
                                             <label class="label-text" for="paypal">PayPal</label>
-                                        </div>
+                                        </div> --}}
 
 
-                                        {{-- iyzico Payment Gateway integration in/with Laravel --}}
-                                        <div class="u-s-m-b-13 prepaidMethod"> {{-- We added the prepaidMethod CSS class to disable that payment method (check front/js/custom.js) if the PIN code of that user's Delivery Address doesn't exist in our `prepaid_pincodes` database table --}}
+                                      
+                                        {{-- <div class="u-s-m-b-13 prepaidMethod"> 
                                             <input type="radio" class="radio-box" name="payment_gateway" id="iyzipay" value="iyzipay">
                                             <label class="label-text" for="iyzipay">iyzipay</label>
-                                        </div>
+                                        </div> --}}
 
 
                                         <div class="u-s-m-b-13">

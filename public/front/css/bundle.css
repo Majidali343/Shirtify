@@ -505,7 +505,7 @@ body {
     position: relative;
     height: 52px;
     line-height: 52px;
-    background: #3f0000;
+    background: #30302e;
     border-radius: 8px 8px 0 0;
     color: #ffffff;
     cursor: pointer;
@@ -819,7 +819,7 @@ body {
     outline: 0; }
 
 .button-primary {
-  background: #3f0000;
+  background: #30302e;
   font-weight: 700;
   color: #ffffff; }
   .button-primary:hover {

@@ -21,7 +21,7 @@ $sections = \App\Models\Section::sections();
                     <li>
                         <a href="mailto:info@multi-vendore-commerce.com">
                         <i class="fas fa-envelope u-c-brand u-s-m-r-9"></i>
-                        E-mail: info@multi-vendore-commerce.com
+                        E-mail: info@dressify.com
                         </a>
                     </li>
                 </ul>
@@ -98,31 +98,9 @@ $sections = \App\Models\Section::sections();
 
                         </ul>
                     </li>
-                    <li>
-                        <a>EGP
-                        <i class="fas fa-chevron-down u-s-m-l-9"></i>
-                        </a>
-                        <ul class="g-dropdown" style="width:90px">
-                            <li>
-                                <a href="#" class="u-c-brand">LE EGP</a>
-                            </li>
-                            <li>
-                                <a href="#">($) USD</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a>ENG
-                        <i class="fas fa-chevron-down u-s-m-l-9"></i>
-                        </a>
-                        <ul class="g-dropdown" style="width:70px">
-                            <li>
-                                <a href="#" class="u-c-brand">ENG</a>
-                            </li>
-                            <li>
-                                <a href="#">ARB</a>
-                            </li>
-                        </ul>
+                   
+                  
+                      
                 </ul>
             </nav>
         </div>
@@ -131,7 +109,7 @@ $sections = \App\Models\Section::sections();
     <!-- Mid-Header -->
     <div class="full-layer-mid-header">
         <div class="container">
-            <div class="row clearfix align-items-center">
+            <div class="clearfix row align-items-center">
                 <div class="col-lg-3 col-md-9 col-sm-6">
                     <div class="brand-logo text-lg-center">
 
@@ -139,7 +117,7 @@ $sections = \App\Models\Section::sections();
                         <a href="{{ url('/') }}">
 
 
-                            <img src="{{ asset('front/images/main-logo/main-logo.png') }}" alt="Multi-vendor E-commerce Application" class="app-brand-logo">
+                            <img height="70px" width="130px" src="{{ asset('front/images/main-logo/main-logo.png') }}" alt="Multi-vendor E-commerce Application" class="app-brand-logo">
                         </a>
                     </div>
                 </div>

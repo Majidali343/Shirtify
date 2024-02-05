@@ -182,7 +182,7 @@
 
                     @foreach ($prices as $key => $price)
                         <input type="checkbox" class="check-box price" id="price{{ $key }}" name="price[]" value="{{ $price }}"> {{-- Note!!: PLEASE NOTE THE SQUARE BRACKETS [] OF THE "name" ATTRIBUTE!! --}} {{-- echo the $price as a 'CSS class' to be able to use it in jQuery for filtering --}} {{-- the checked checkboxes <input> fields of the price filter values (like '1000-2000', '2000-5000', ...) will be submitted as an ARRAY because we used SQUARE BRACKETS [] with the "name" HTML attribute in the checkbox <input> field in filters.blade.php, or else, AJAX is used to send the <input> values WITHOUT submitting the <form> at all --}}
-                        <label class="label-text" for="price{{ $key }}">EGP {{ $price }}
+                        <label class="label-text" for="price{{ $key }}">RS .  {{ $price }}
                         </label>
                     @endforeach
                 </div>

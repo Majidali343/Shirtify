@@ -651,7 +651,7 @@ class OrderController extends Controller
                                 <div class="title">Order ID: ' . $orderDetails['id'] . '</div>
                                 <div class="date">
                                     Order Date: ' . date('Y-m-d h:i:s', strtotime($orderDetails['created_at'])) . '<br>
-                                    Order Amount: INR ' . $orderDetails['grand_total'] . '<br>
+                                    Order Amount:RUPEES' . $orderDetails['grand_total'] . '<br>
                                     Order Status: ' . $orderDetails['order_status'] . '<br>
                                     Payment Method: ' . $orderDetails['payment_method'] . '<br>
                                 </div>

@@ -571,7 +571,7 @@ class ProductsController extends Controller
         $getCartItems = Cart::getCartItems();
 
         // Static SEO (HTML meta tags): Check the HTML <meta> tags and <title> tag in front/layout/layout.blade.php    
-        $meta_title       = 'Shopping Cart - Multi Vendor E-commerce';
+        $meta_title       = 'Shopping Cart - Dressify';
         $meta_keywords    = 'shopping cart, multi vendor';
 
 

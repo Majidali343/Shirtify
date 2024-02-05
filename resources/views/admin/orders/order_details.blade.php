@@ -55,14 +55,14 @@
             <div class="row">
                 <div class="col-md-12 grid-margin">
                     <div class="row">
-                        <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                        <div class="mb-4 col-12 col-xl-8 mb-xl-0">
                             <h3 class="font-weight-bold">Order Details</h3>
-                            <h6 class="font-weight-normal mb-0"><a href="{{ url('admin/orders') }}">Back to Orders</a></h6>
+                            <h6 class="mb-0 font-weight-normal"><a href="{{ url('admin/orders') }}">Back to Orders</a></h6>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
                                 <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                                    <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <button class="bg-white btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
@@ -96,11 +96,11 @@
                             </div>
                             <div class="form-group" style="height: 15px">
                                 <label style="font-weight: 550">Order Total: </label>
-                                <label>EGP{{ $orderDetails['grand_total'] }}</label>
+                                <label>RS . {{ $orderDetails['grand_total'] }}</label>
                             </div>
                             <div class="form-group" style="height: 15px">
                                 <label style="font-weight: 550">Shipping Charges: </label>
-                                <label>EGP{{ $orderDetails['shipping_charges'] }}</label>
+                                <label>RS . {{ $orderDetails['shipping_charges'] }}</label>
                             </div>
 
                             @if (!empty($orderDetails['coupon_code']))
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="form-group" style="height: 15px">
                                     <label style="font-weight: 550">Coupon Amount: </label>
-                                    <label>EGP{{ $orderDetails['coupon_amount'] }}</label>
+                                    <label>RS . {{ $orderDetails['coupon_amount'] }}</label>
                                 </div>                                
                             @endif
 

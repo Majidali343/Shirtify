@@ -38,7 +38,7 @@ class PaypalController extends Controller
     // Pay using PayPal    // https://omnipay.thephpleague.com/simple-example    // https://github.com/thephpleague/omnipay    
     public function pay(Request $request) {
         try {
-            $paypal_amount = round(Session::get('grand_total') / 80, 2); // 'grand_total' was stored in Session in checkout() method in Front/ProductsController.php    // Interacting With The Session: Retrieving Data: https://laravel.com/docs/9.x/session#retrieving-data    // Note: PayPal accepts world major currencies ONLY, so we divided INR by 80 to convert INR to USD
+            $paypal_amount = round(Session::get('grand_total') / 80, 2); // 'grand_total' was stored in Session in checkout() method in Front/ProductsController.php    // Interacting With The Session: Retrieving Data: https://laravel.com/docs/9.x/session#retrieving-data    // Note: PayPal accepts world major currencies ONLY, so we dividedRUPEESby 80 to convertRUPEESto USD
 
             // Send purchase request
             $response = $this->gateway->purchase(array( // $gateway is an object of    Omnipay\Common\GatewayFactory interface (check the first line of code in the __construct() method)    // $response comes from PayPal website (i.e. API / backend)

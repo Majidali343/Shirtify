@@ -214,15 +214,15 @@
 
                                 @if ($getDiscountPrice > 0) {{-- if there's a discount on the product price --}}
                                     <div class="price">
-                                        <h4>EGP{{ $getDiscountPrice }}</h4>
+                                        <h4>RS . {{ $getDiscountPrice }}</h4>
                                     </div>
                                     <div class="original-price">
                                         <span>Original Price:</span>
-                                        <span>EGP{{ $productDetails['product_price'] }}</span> {{-- the product original price (without discount) --}}
+                                        <span>RS . {{ $productDetails['product_price'] }}</span> {{-- the product original price (without discount) --}}
                                     </div>
                                 @else {{-- if there's no discount on the product price --}}
                                     <div class="price">
-                                        <h4>EGP{{ $productDetails['product_price'] }}</h4> {{-- the product original price (without discount) --}}
+                                        <h4>RS . {{ $productDetails['product_price'] }}</h4> {{-- the product original price (without discount) --}}
                                     </div>
                                 @endif
 
@@ -624,7 +624,7 @@
                 <!-- Similar-Products -->
                 <section class="section-maker">
                     <div class="container">
-                        <div class="sec-maker-header text-center">
+                        <div class="text-center sec-maker-header">
                             <h3 class="sec-maker-h3">Similar Products</h3>
                         </div>
                         <div class="slider-fouc">
@@ -695,16 +695,16 @@
                                             @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
                                                 <div class="price-template">
                                                     <div class="item-new-price">
-                                                        EGP{{ $getDiscountPrice }} 
+                                                        RS . {{ $getDiscountPrice }} 
                                                     </div>
                                                     <div class="item-old-price">
-                                                        EGP{{ $product['product_price'] }}
+                                                        RS . {{ $product['product_price'] }}
                                                     </div>
                                                 </div>
                                             @else {{-- if there's no discount on the price, show the original price --}}
                                                 <div class="price-template">
                                                     <div class="item-new-price">
-                                                        EGP{{ $product['product_price'] }}
+                                                        RS . {{ $product['product_price'] }}
                                                     </div>
                                                 </div>
                                             @endif
@@ -728,7 +728,7 @@
                 <!-- Recently-View-Products  -->
                 <section class="section-maker">
                     <div class="container">
-                        <div class="sec-maker-header text-center">
+                        <div class="text-center sec-maker-header">
                             <h3 class="sec-maker-h3">Recently Viewed Products</h3>
                         </div>
                         <div class="slider-fouc">
@@ -799,16 +799,16 @@
                                             @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
                                                 <div class="price-template">
                                                     <div class="item-new-price">
-                                                        EGP{{ $getDiscountPrice }} 
+                                                        RS . {{ $getDiscountPrice }} 
                                                     </div>
                                                     <div class="item-old-price">
-                                                        EGP{{ $product['product_price'] }}
+                                                        RS . {{ $product['product_price'] }}
                                                     </div>
                                                 </div>
                                             @else {{-- if there's no discount on the price, show the original price --}}
                                                 <div class="price-template">
                                                     <div class="item-new-price">
-                                                        EGP{{ $product['product_price'] }}
+                                                        RS . {{ $product['product_price'] }}
                                                     </div>
                                                 </div>
                                             @endif
