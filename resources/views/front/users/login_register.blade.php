@@ -103,7 +103,7 @@
 
 
                                 {{-- Forgot Password Functionality --}} 
-                                <div class="group-2 text-right">
+                                <div class="text-right group-2">
                                     <div class="page-anchor">
                                         <a href="{{ url('user/forgot-password') }}">
                                             <i class="fas fa-circle-o-notch u-s-m-r-9"></i>Lost your password?
