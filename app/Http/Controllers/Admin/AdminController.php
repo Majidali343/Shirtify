@@ -268,7 +268,8 @@ class AdminController extends Controller
                 Admin::where('id', Auth::guard('admin')->user()->id)->update([ // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
                     'name'   => $data['vendor_name'],
                     'mobile' => $data['vendor_mobile'],
-                    'image'  => $imageName
+                    'image'  => $imageName 
+                  
                 ]); // Note that the image name is the random image name that we generated
 
                 // Update Vendor Details in 'vendors' table
@@ -343,6 +344,7 @@ class AdminController extends Controller
                 }
 
 
+
                 $vendorCount = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->count(); // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
                 if ($vendorCount > 0) { // if there's a vendor already existing, them UPDATE
                     // UPDATE `vendors_business_details` table
@@ -381,7 +383,9 @@ class AdminController extends Controller
                         'address_proof_image'     => $imageName,
                     ]);
                 }
-
+                Admin::where('id', Auth::guard('admin')->user()->id)->update([ // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
+                    'status' => 1
+                ]); 
 
                 return redirect()->back()->with('success_message', 'Vendor details updated successfully!');
             }
