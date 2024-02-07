@@ -275,14 +275,15 @@ $sections = \App\Models\Section::sections();
                 </div>
                 <div class="col-lg-9">
                     <ul class="bottom-nav g-nav u-d-none-lg">
-                        <li>
-                            <a href="{{ url('search-products?search=new-arrivals') }}">New Arrivals
-                                <span class="superscript-label-new">NEW</span>
-                            </a>
-                        </li>
+                        
                         <li>
                             <a href="{{ url('vendor/login-register') }}">Seller
                               
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('women') }}">Langhas
+                             
                             </a>
                         </li>
                         <li>
@@ -316,7 +317,7 @@ $sections = \App\Models\Section::sections();
                                         <a href="{{ url('men') }}">Men Clothing</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('women') }}">Women Clothing</a>
+                                        <a href="{{ url('women') }}">Langhas</a>
                                     </li>
                                     {{-- <li>
                                         <a href="{{ url('kids') }}">Kids Clothing</a>

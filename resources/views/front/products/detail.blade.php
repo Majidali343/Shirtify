@@ -672,12 +672,12 @@
                                                     <li class="has-separator">
                                                         <a href="listing.html">{{ $product['product_color'] }}</a>
                                                     </li>
-                                                    <li>
+                                                    {{-- <li>
                                                         <a href="listing.html">{{ $product['brand']['name'] }}</a>
 
 
 
-                                                    </li>
+                                                    </li> --}}
                                                 </ul>
                                                 <h6 class="item-title">
                                                     <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
@@ -777,12 +777,12 @@
                                                     <li class="has-separator">
                                                         <a href="listing.html">{{ $product['product_color'] }}</a>
                                                     </li>
-                                                    <li>
+                                                    {{-- <li>
                                                         <a href="listing.html">{{ $product['brand']['name'] }}</a>
 
 
 
-                                                    </li>
+                                                    </li> --}}
                                                 </ul>
                                                 <h6 class="item-title">
                                                     <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
