@@ -25,9 +25,8 @@
     <!-- Main-Slider /- -->
 
 
-
     
-    @if (isset($fixBanners[1]['image']))
+    {{-- @if (isset($fixBanners[1]['image']))
         <!-- Banner-Layer -->
         <div class="banner-layer">
             <div class="container">
@@ -39,14 +38,14 @@
             </div>
         </div>
         <!-- Banner-Layer /- -->    
-    @endif
+    @endif --}}
 
 
 
     <!-- Top Collection -->
     <section class="section-maker">
         <div class="container">
-            <div class="sec-maker-header text-center">
+            <div class="text-center sec-maker-header">
                 <h3 class="sec-maker-h3">TOP COLLECTION</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <li class="nav-item">
@@ -411,8 +410,8 @@
         <div class="banner-layer">
             <div class="container">
                 <div class="image-banner">
-                    <a target="_blank" rel="nofollow" href="{{ url($fixBanners[1]['link']) }}" class="mx-auto banner-hover effect-dark-opacity">
-                        <img class="img-fluid" src="{{ asset('front/images/banner_images/' . $fixBanners[1]['image']) }}" alt="{{ $fixBanners[1]['alt'] }}" title="{{ $fixBanners[1]['title'] }}">
+                    <a target="_blank" style="height: 600px" rel="nofollow" href="{{ url($fixBanners[1]['link']) }}" class="mx-auto banner-hover effect-dark-opacity">
+                        <img class="img-fluid" style="height: 600px" src="{{ asset('front/images/banner_images/' . $fixBanners[1]['image']) }}" alt="{{ $fixBanners[1]['alt'] }}" title="{{ $fixBanners[1]['title'] }}">
                     </a>
                 </div>
             </div>
@@ -455,7 +454,7 @@
                                 <i class="ion ion-ios-card"></i>
                             </div>
                             <h2>
-                                Safe Payment
+                                Cash on Delievery
                             </h2>
                             <p>Pay with the world’s most popular and secure payment methods</p>
                         </div>
