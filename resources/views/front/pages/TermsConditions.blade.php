@@ -59,6 +59,6 @@
     <h2>Contact Information</h2>
     <p>If you encounter any issues or have questions about our return policy, please feel free to contact our customer service team at shirtify.com. We are here to assist you. <a href="mailto:contact@shirtify.com">contact@shirtify.com</a>.</p>
 
-    <p>Last updated: [Insert Last Updated Date]</p>
+  
 </div>
 @endsection

@@ -25,7 +25,7 @@
     <div class="page-account u-s-p-t-80">
         <div class="container">
 
-
+        
 
             {{-- Displaying The Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors AND https://laravel.com/docs/9.x/blade#validation-errors --}} 
             {{-- Determining If An Item Exists In The Session (using has() method): https://laravel.com/docs/9.x/session#determining-if-an-item-exists-in-the-session --}}
@@ -64,7 +64,7 @@
                 <!-- Login -->
                 <div class="col-lg-6">
                     <div class="login-wrapper">
-                        <h2 class="account-h2 u-s-m-b-20">Login</h2>
+                        <h2 class="account-h2 u-s-m-b-20">Customer Login</h2>
                         <h6 class="account-h6 u-s-m-b-30">Welcome back! Sign in to your account.</h6>
 
 
@@ -127,7 +127,7 @@
                 <!-- Register -->
                 <div class="col-lg-6">
                     <div class="reg-wrapper">
-                        <h2 class="account-h2 u-s-m-b-20">Register</h2>
+                        <h2 class="account-h2 u-s-m-b-20">Customer Register</h2>
                         <h6 class="account-h6 u-s-m-b-30">Registering for this site allows you to access your order status and history.</h6>
 
 

@@ -91,7 +91,7 @@ $sections = \App\Models\Section::sections();
                                 <li>
                                     <a href="{{ url('vendor/login-register') }}">
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
-                                        Vendor Login
+                                        Seller Login
                                     </a>
                                 </li>
                             @endif
@@ -291,7 +291,7 @@ $sections = \App\Models\Section::sections();
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('CustomerService') }}" target="_blank">Customer Service</a>
+                            <a href="{{ url('CustomerService') }}" target="_blank">FAQS</a>
 
                         </li>
                         <li class="mega-position">
