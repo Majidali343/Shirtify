@@ -8,6 +8,8 @@ $sections = \App\Models\Section::sections();
 
 <!-- Header -->
 <header>
+
+
     <!-- Top-Header -->
     <div class="full-layer-outer-header">
         <div class="container clearfix">
@@ -196,14 +198,14 @@ $sections = \App\Models\Section::sections();
         @include('front.layout.header_cart_items')
     </div>
     <!-- Mini Cart Widget /- -->
+    {{-- @dd($sections ) --}}
 
-
-
+    {{-- @dd($sections) --}}
     <!-- Bottom-Header -->
     <div class="full-layer-bottom-header">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-3">
+                <div class="col-lg-3" style="max-width: 19%">
                     <div class="v-menu v-close">
                         <span class="v-title">
                             <i class="ion ion-md-menu"></i>
@@ -212,62 +214,16 @@ $sections = \App\Models\Section::sections();
                         </span>
                         <nav>
                             <div class="v-wrapper">
+
                                 <ul class="v-list animated fadeIn">
-
-
-
                                     @foreach ($sections as $section)
-                                        @if (count($section['categories']) > 0)
-                                            {{-- if the section has child categories, show the section name, but if it doesn't, don't show it --}}
-                                            <li class="js-backdrop">
-                                                <a href="javascript:;">
-                                                    <i class="ion-ios-add-circle"></i>
-
-
-                                                    {{ $section['name'] }} {{-- Show section name --}}
-
-
-                                                    <i class="ion ion-ios-arrow-forward"></i>
-                                                </a>
-                                                <button class="v-button ion ion-md-add"></button>
-                                                <div class="v-drop-right" style="width: 700px;">
-                                                    <div class="row">
-
-
-
-                                                        @foreach ($section['categories'] as $category)
-                                                            {{-- Show the section child categories --}}
-                                                            <div class="col-lg-4">
-                                                                <ul class="v-level-2">
-                                                                    <li>
-                                                                        <a
-                                                                            href="{{ url($category['url']) }}">{{ $category['category_name'] }}</a>
-                                                                        <ul>
-
-
-
-                                                                            @foreach ($category['sub_categories'] as $subcategory)
-                                                                                {{-- Show the section child categories child Subcategories --}}
-                                                                                <li>
-                                                                                    <a
-                                                                                        href="{{ url($subcategory['url']) }}">{{ $subcategory['category_name'] }}</a>
-                                                                                </li>
-                                                                            @endforeach
-
-
-
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        @endif
+                                    @foreach ($section['categories'] as $category)
+                                    
+                                    <li><a href="{{$category['url']}}">{{$category['category_name']}}</a></li>
+                                        
                                     @endforeach
-
-
+                                @endforeach
+           
                                 </ul>
                             </div>
                         </nav>
@@ -275,15 +231,15 @@ $sections = \App\Models\Section::sections();
                 </div>
                 <div class="col-lg-9">
                     <ul class="bottom-nav g-nav u-d-none-lg">
-                        
+
                         <li>
                             <a href="{{ url('vendor/login-register') }}">Seller
-                              
+
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('women') }}">Langhas
-                             
+
                             </a>
                         </li>
                         <li>
