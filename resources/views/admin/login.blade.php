@@ -4,7 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Admin Panel</title>
+        <title>Dashboard</title>
         <!-- plugins:css -->
         <link rel="stylesheet" href="{{ url('admin/vendors/feather/feather.css') }}">
         <link rel="stylesheet" href="{{ url('admin/vendors/ti-icons/css/themify-icons.css') }}">
@@ -20,10 +20,10 @@
     <body>
         <div class="container-scroller">
             <div class="container-fluid page-body-wrapper full-page-wrapper">
-                <div class="content-wrapper d-flex align-items-center auth px-0">
-                    <div class="row w-100 mx-0">
-                        <div class="col-lg-4 mx-auto">
-                            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                <div class="px-0 content-wrapper d-flex align-items-center auth">
+                    <div class="mx-0 row w-100">
+                        <div class="mx-auto col-lg-4">
+                            <div class="px-4 py-5 text-left auth-form-light px-sm-5">
                                 <h4>Hello! let's get started</h4>
                                 <h6 class="font-weight-light">Sign in to continue.</h6>
 

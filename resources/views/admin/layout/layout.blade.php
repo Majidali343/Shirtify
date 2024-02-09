@@ -12,7 +12,7 @@
 
 
 
-        <title>Admin Panel</title>
+        <title>Dashboard</title>
         <!-- plugins:css -->
         <link rel="stylesheet" href="{{ url('admin/vendors/feather/feather.css') }}">
         <link rel="stylesheet" href="{{ url('admin/vendors/ti-icons/css/themify-icons.css') }}">
