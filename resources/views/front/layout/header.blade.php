@@ -16,9 +16,9 @@ $sections = \App\Models\Section::sections();
             <nav>
                 <ul class="primary-nav g-nav">
                     <li>
-                        <a href="tel:+201255845857">
+                        <a href="tel:+92300507160">
                             <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
-                            Telephone: +201255845857</a>
+                            Telephone: +92300507160</a>
                     </li>
                     <li>
                         <a href="mailto:info@dressify.com">
@@ -251,10 +251,9 @@ $sections = \App\Models\Section::sections();
 
                         </li>
                         <li class="mega-position">
-                            <a>More
-                                <i class="fas fa-chevron-down u-s-m-l-9"></i>
-                            </a>
-                            <div class="mega-menu mega-3-colm">
+                            <a href="{{ url('/contact') }}" >Contact us
+                            </a >
+                            {{-- <div class="mega-menu mega-3-colm">
                                 <ul>
                                     <li class="menu-title">COMPANY</li>
                                     <li>
@@ -275,9 +274,7 @@ $sections = \App\Models\Section::sections();
                                     <li>
                                         <a href="{{ url('women') }}">Langhas</a>
                                     </li>
-                                    {{-- <li>
-                                        <a href="{{ url('kids') }}">Kids Clothing</a>
-                                    </li> --}}
+                                  
                                 </ul>
                                 <ul>
                                     <li class="menu-title">ACCOUNT</li>
@@ -288,7 +285,7 @@ $sections = \App\Models\Section::sections();
                                         <a href="{{ url('user/orders') }}">My Orders</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </li>
                     </ul>
                 </div>

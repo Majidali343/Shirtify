@@ -231,7 +231,7 @@
                                                             alt="Product">
                                                     @endif
                                                 </a>
-                                                <div class="item-action-behaviors">
+                                                {{-- <div class="item-action-behaviors">
                                                     <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
                                                         Look</a>
                                                     <a class="item-mail" href="javascript:void(0)">Mail</a>
@@ -239,7 +239,7 @@
                                                         Wishlist</a>
                                                     <a class="item-addCart"
                                                         href="{{ url('product/' . $product['id']) }}">Add to Cart</a>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="item-content">
                                                 <div class="what-product-is">
@@ -332,7 +332,7 @@
                                                             alt="Product">
                                                     @endif
                                                 </a>
-                                                <div class="item-action-behaviors">
+                                                {{-- <div class="item-action-behaviors">
                                                     <a class="item-quick-look" data-toggle="modal"
                                                         href="#quick-view">Quick Look</a>
                                                     <a class="item-mail" href="javascript:void(0)">Mail</a>
@@ -340,7 +340,7 @@
                                                         Wishlist</a>
                                                     <a class="item-addCart"
                                                         href="{{ url('product/' . $product['id']) }}">Add to Cart</a>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="item-content">
                                                 <div class="what-product-is">
@@ -426,7 +426,7 @@
                                                             alt="Product">
                                                     @endif
                                                 </a>
-                                                <div class="item-action-behaviors">
+                                                {{-- <div class="item-action-behaviors">
                                                     <a class="item-quick-look" data-toggle="modal"
                                                         href="#quick-view">Quick Look</a>
                                                     <a class="item-mail" href="javascript:void(0)">Mail</a>
@@ -434,7 +434,7 @@
                                                         Wishlist</a>
                                                     <a class="item-addCart"
                                                         href="{{ url('product/' . $product['id']) }}">Add to Cart</a>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="item-content">
                                                 <div class="what-product-is">
@@ -520,7 +520,7 @@
                                                             alt="Product">
                                                     @endif
                                                 </a>
-                                                <div class="item-action-behaviors">
+                                                {{-- <div class="item-action-behaviors">
                                                     <a class="item-quick-look" data-toggle="modal"
                                                         href="#quick-view">Quick Look</a>
                                                     <a class="item-mail" href="javascript:void(0)">Mail</a>
@@ -528,7 +528,7 @@
                                                         Wishlist</a>
                                                     <a class="item-addCart"
                                                         href="{{ url('product/' . $product['id']) }}">Add to Cart</a>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="item-content">
                                                 <div class="what-product-is">
