@@ -143,7 +143,7 @@
                                                         <h3 class="order-h3">RS . {{ $total_price }}</h3>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                {{-- <tr>
                                                     <td>
                                                         <h6 class="order-h6">Shipping Charges</h6>
                                                     </td>
@@ -152,22 +152,23 @@
                                                             <span class="shipping_charges">RS . 0</span>
                                                         </h6>
                                                     </td>
-                                                </tr>
-                                                <tr>
+                                                </tr> --}}
+                                                {{-- <tr>
                                                     <td>
                                                         <h6 class="order-h6">Coupon Discount</h6>
                                                     </td>
                                                     <td>
                                                         <h6 class="order-h6">
                                                             
-                                                            @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- We stored the 'couponAmount' in a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
+                                                            @if (\Illuminate\Support\Facades\Session::has('couponAmount')) 
+                                                          
                                                                 <span class="couponAmount">RS . {{ \Illuminate\Support\Facades\Session::get('couponAmount') }}</span>
                                                             @else
                                                                 RS . 0
                                                             @endif
                                                         </h6>
                                                     </td>
-                                                </tr>
+                                                </tr> --}}
                                                 <tr>
                                                     <td>
                                                         <h3 class="order-h3">Grand Total</h3>

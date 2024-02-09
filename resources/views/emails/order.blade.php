@@ -43,7 +43,7 @@
                             <td colspan="5" align="right">Shipping Charges</td>
                             <td>INR {{ $orderDetails['shipping_charges'] }}</td>
                         </tr>
-                        <tr>
+                        {{-- <tr>
                             <td colspan="5" align="right">Coupon Discount</td>
                             <td>
                                 INR
@@ -53,7 +53,7 @@
                                     0
                                 @endif
                             </td>
-                        </tr>
+                        </tr> --}}
                         <tr>
                             <td colspan="5" align="right">Grand Total</td>
                             <td>INR {{ $orderDetails['grand_total'] }}</td>

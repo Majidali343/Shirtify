@@ -553,6 +553,7 @@
 
                                         </div>
                                     </div>
+                                   
                                     <!-- Get-Reviews -->
                                     <div class="get-reviews u-s-p-b-22">
                                         <!-- Review-Options -->
@@ -566,7 +567,6 @@
                                         <!-- Review-Options /- -->
                                         <!-- All-Reviews -->
                                         <div class="reviewers">
-
                                             {{-- Display/Show user's Ratings --}}
                                             @if (count($ratings) > 0) {{-- if there're any ratings for the product --}}
                                                 @foreach($ratings as $rating)

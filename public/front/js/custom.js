@@ -683,17 +683,17 @@ $(document).ready(function() {
         // Show the right Payment Methods radio buttons in front/products/checkout.blade.php based on Getting the results of checking if both the COD and Prepaid PIN codes of the user's Delviery Address exist in our both `cod_pincodes` and `prepaid_pincodes` database tables. Check the checkout() method in Front/ProductsController.php and front/products/checkout.blade.php    
         var codpincodeCount     = $(this).attr('codpincodeCount');     // using Custom HTML data attributes (data-*)
         var prepaidpincodeCount = $(this).attr('prepaidpincodeCount'); // using Custom HTML data attributes (data-*)
-        if (codpincodeCount > 0) {
-            $('.codMethod').show();
-        } else {
-            $('.codMethod').hide();
-        }
+        // if (codpincodeCount > 0) {
+        //     $('.codMethod').show();
+        // } else {
+        //     $('.codMethod').hide();
+        // }
 
-        if (prepaidpincodeCount > 0) {
-            $('.prepaidMethod').show();
-        } else {
-            $('.prepaidMethod').hide();
-        }
+        // if (prepaidpincodeCount > 0) {
+        //     $('.prepaidMethod').show();
+        // } else {
+        //     $('.prepaidMethod').hide();
+        // }
 
         if (coupon_amount == '') {
             coupon_amount = 0;
