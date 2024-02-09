@@ -553,6 +553,7 @@
 
                                         </div>
                                     </div>
+                                   
                                     <!-- Get-Reviews -->
                                     <div class="get-reviews u-s-p-b-22">
                                         <!-- Review-Options -->
@@ -566,7 +567,6 @@
                                         <!-- Review-Options /- -->
                                         <!-- All-Reviews -->
                                         <div class="reviewers">
-
                                             {{-- Display/Show user's Ratings --}}
                                             @if (count($ratings) > 0) {{-- if there're any ratings for the product --}}
                                                 @foreach($ratings as $rating)
@@ -653,12 +653,12 @@
 
 
                                             </a>
-                                            <div class="item-action-behaviors">
+                                            {{-- <div class="item-action-behaviors">
                                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
@@ -758,12 +758,12 @@
 
 
                                             </a>
-                                            <div class="item-action-behaviors">
+                                            {{-- <div class="item-action-behaviors">
                                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">

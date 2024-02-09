@@ -64,7 +64,7 @@
                 <!-- Login -->
                 <div class="col-lg-6">
                     <div class="login-wrapper">
-                        <h2 class="account-h2 u-s-m-b-20">Login</h2>
+                        <h2 class="account-h2 u-s-m-b-20">Seller Login</h2>
                         <h6 class="account-h6 u-s-m-b-30">Welcome back! Sign in to your account.</h6>
 
 
@@ -95,7 +95,7 @@
                 <!-- Register -->
                 <div class="col-lg-6">
                     <div class="reg-wrapper">
-                        <h2 class="account-h2 u-s-m-b-20">Register</h2>
+                        <h2 class="account-h2 u-s-m-b-20">Seller Register</h2>
                         <h6 class="account-h6 u-s-m-b-30">Registering for this site allows you to access your order status and history.</h6>
 
 
@@ -109,25 +109,25 @@
                                 <label for="vendorname">Name
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="text" id="vendorname" class="text-field" placeholder="Vendor Name" name="name">
+                                <input type="text" id="vendorname" class="text-field" placeholder="Seller Name" name="name">
                             </div>
                             <div class="u-s-m-b-30">
                                 <label for="vendormobile">Mobile
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="text" id="vendormobile" class="text-field" placeholder="Vendor Mobile" name="mobile">
+                                <input type="text" id="vendormobile" class="text-field" placeholder="Seller Mobile" name="mobile">
                             </div>
                             <div class="u-s-m-b-30">
                                 <label for="vendoremail">Email
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="email" id="vendoremail" class="text-field" placeholder="Vendor Email" name="email">
+                                <input type="email" id="vendoremail" class="text-field" placeholder="Seller Email" name="email">
                             </div>
                             <div class="u-s-m-b-30">
                                 <label for="vendorpassword">Password
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="password" id="vendorpassword" class="text-field" placeholder="Vendor Password" name="password">
+                                <input type="password" id="vendorpassword" class="text-field" placeholder="Seller Password" name="password">
                             </div>
 
                             <div class="u-s-m-b-30"> {{-- "I've read and accept the terms & conditions" Checkbox --}}

@@ -26,7 +26,7 @@
                             @endif
 
 
-                            <div class="table-responsive pt-3">
+                            <div class="pt-3 table-responsive">
                                 {{-- DataTable --}}
                                 <table id="shipping" class="table table-bordered"> {{-- using the id here for the DataTable --}}
                                     <thead>
@@ -92,7 +92,7 @@
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. All rights reserved.</span>
+                <span class="text-center text-muted text-sm-left d-block d-sm-inline-block">Copyright © 2024. All rights reserved.</span>
             </div>
         </footer>
         <!-- partial -->

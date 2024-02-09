@@ -126,21 +126,22 @@
                         <span class="calc-text">RS . {{ $total_price }}</span>
                     </td>
                 </tr>
-                <tr>
+                {{-- <tr>
                     <td>
                         <h3 class="calc-h3 u-s-m-b-0">Coupon Discount</h3>
                     </td>
                     <td>
-                        <span class="calc-text couponAmount"> {{-- We create the 'couponAmount' CSS class to use it as a handle for AJAX inside    $('#applyCoupon').submit();    function in front/js/custom.js --}}
+                        <span class="calc-text couponAmount">
                             
-                            @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- We stored the 'couponAmount' in a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
+                            @if (\Illuminate\Support\Facades\Session::has('couponAmount'))
+                            
                                 RS . {{ \Illuminate\Support\Facades\Session::get('couponAmount') }}
                             @else
                                 RS . 0
                             @endif
                         </span>
                     </td>
-                </tr>
+                </tr> --}}
                 <tr>
                     <td>
                         <h3 class="calc-h3 u-s-m-b-0">Grand Total</h3> {{-- Total Price after Coupon discounts (if any) --}}

@@ -120,16 +120,16 @@
                         <h1 class="contact-h1">Contact Us</h1>
                         <div class="contact-material u-s-m-b-16">
                             <h6>Location</h6>
-                            <span>10 Salah Salem St.</span>
-                            <span>Cairo, Egypt</span>
+                            <span>g 13 islamabad</span>
+                            <span>islamabad, Pakistan</span>
                         </div>
                         <div class="contact-material u-s-m-b-16">
                             <h6>Email</h6>
-                            <span>developers@computerscience.com</span>
+                            <span>info@dressify.com.com</span>
                         </div>
                         <div class="contact-material u-s-m-b-16">
-                            <h6>Telephone</h6>
-                            <span>+201122237359</span>
+                            <h6>Phone</h6>
+                            <span>+92300507160</span>
                         </div>
                     </div>
                 </div>

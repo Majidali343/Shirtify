@@ -83,7 +83,7 @@
                                 <span>Dressify</span>
                             </li>
                             <li>
-                                <a href="tel:+201255845857">
+                                <a href="tel:+92300507160">
                                 <i class="fas fa-phone u-s-m-r-9"></i>
                                 <span>+01255845857</span>
                                 </a>
@@ -142,7 +142,7 @@
                     </li>
                 </ul>
             </div>
-            <p class="copyright-text">Copyright &copy; 2022
+            <p class="copyright-text">Copyright &copy; 2024
                 <a target="_blank" rel="nofollow" href="#">Dressify</a> | All Right Reserved
             </p>
         </div>
