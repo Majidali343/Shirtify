@@ -10,8 +10,6 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Ratings</h4>
-                        
-                            
 
                             {{-- Displaying The Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors AND https://laravel.com/docs/9.x/blade#validation-errors --}}
                             {{-- Determining If An Item Exists In The Session (using has() method): https://laravel.com/docs/9.x/session#determining-if-an-item-exists-in-the-session --}}
@@ -25,6 +23,7 @@
                                 </div>
                             @endif
 
+                       
 
                             <div class="pt-3 table-responsive">
                                 {{-- DataTable --}}
@@ -45,7 +44,7 @@
                                             <tr>
                                                 <td>{{ $rating['id'] }}</td>
                                                 <td>
-                                                    <a target="_blank" href="{{ url('product/' . $rating['product']['id']) }}">
+                                                    <a target="_blank" href="{{ url('product/' . $rating['product_id']) }}">
                                                         {{ $rating['product']['product_name'] }}
                                                     </a>
                                                 </td>
@@ -64,17 +63,19 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    {{-- <a href="{{ url('admin/add-edit-rating/' . $rating['id']) }}"> --}}
-                                                        {{-- <i style="font-size: 25px" class="mdi mdi-pencil-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
-                                                    {{-- </a> --}}
+                                                    {{-- <a href="{{ url('admin/add-edit-rating/' . $rating['id']) }}">
+                                                        <i style="font-size: 25px" class="mdi mdi-pencil-box"></i>  
+                                                       
+                                                    </a> --}}
 
                                                     {{-- Confirm Deletion JS alert and Sweet Alert --}}
-                                                    {{-- <a title="Rating" class="confirmDelete" href="{{ url('admin/delete-rating/' . $rating['id']) }}"> --}}
-                                                        {{-- <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
-                                                    {{-- </a> --}}
-                                                    <a href="JavaScript:void(0)" class="confirmDelete" module="rating" moduleid="{{ $rating['id'] }}">
-                                                        <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> {{-- Icons from Skydash Admin Panel Template --}}
+                                                     <a title="Rating" class="confirmDelete" href="{{ url('admin/delete-rating/' . $rating['id']) }}">
+                                                     <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i>
+                                                      
                                                     </a>
+                                                    {{-- <a href="JavaScript:void(0)" class="confirmDelete" module="rating" moduleid="{{ $rating['id'] }}">
+                                                        <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> 
+                                                    </a> --}}
                                                 </td>
                                             </tr>
                                         @endforeach
