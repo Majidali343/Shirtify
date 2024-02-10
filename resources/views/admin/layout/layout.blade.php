@@ -33,7 +33,10 @@
         <link rel="stylesheet" href="{{ url('admin/css/vertical-layout-light/style.css') }}">
         <!-- endinject -->
         <link rel="shortcut icon" href="{{ url('admin/images/favicon.jpg') }}" />
-
+        <link rel="stylesheet" href="{{ url('front/css/utility.css') }}">
+        <!-- Main -->
+        <link rel="stylesheet" href="{{ url('front/css/bundle.css') }}">
+        <link rel="stylesheet" href="{{ url('front/css/bootstrap.min.css') }}">
         {{-- DataTable --}}
         <link rel="stylesheet" href="{{ url('admin/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ url('admin/css/dataTables.bootstrap4.min.css') }}">

@@ -1,15 +1,94 @@
 @extends('admin.layout.layout')
 
+<style>
+    .addadmin {
+        width: 170px;
+        padding-top: position: relative;
+        30px;
+        margin: 5px auto;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #052CA3;
+        text-align: center;
+        padding: 10px 0px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
 
+    .addadmin:hover {
+        background-color: #252525;
+        color: #ffffff;
+    }
+</style>
 @section('content')
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add new Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="vendorForm" action="{{ url('/NewAdmin') }}" method="post">
+                        @csrf
+                        <div class="u-s-m-b-30">
+                            <label for="vendorname">Name
+                                <span class="astk">*</span>
+                            </label>
+                            <input type="text" id="vendorname" class="text-field" placeholder="Admin Name" name="name" required>
+                        </div>
+                        <div class="u-s-m-b-30">
+                            <label for="vendormobile">Mobile
+                                <span class="astk">*</span>
+                            </label>
+                            <input type="text" id="vendormobile" class="text-field" placeholder="Admin Mobile" name="mobile" required>
+                        </div>
+                        <div class="u-s-m-b-30">
+                            <label for="vendoremail">Email
+                                <span class="astk">*</span>
+                            </label>
+                            <input type="email" id="vendoremail" class="text-field" placeholder="Admin Email" name="email" required>
+                        </div>
+                        <div class="u-s-m-b-30">
+                            <label for="vendorpassword">Password
+                                <span class="astk">*</span>
+                            </label>
+                            <input type="password" id="vendorpassword" class="text-field" placeholder="Admin Password" name="password" required>
+                        </div>
+
+                        <div class="u-s-m-b-45">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            
+                        </div>
+                    </form>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+
     <div class="main-panel">
         <div class="content-wrapper">
+
             <div class="row">
+
                 <div class="col-lg-12 grid-margin stretch-card">
+
                     <div class="card">
+                        <button type="button" class="addadmin" data-toggle="modal" data-target="#exampleModal">
+                            Add New Admin
+                        </button>
+                        
                         <div class="card-body">
                             <h4 class="card-title">{{ $title }}</h4>
                             <div class="pt-3 table-responsive">
+
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -40,19 +119,28 @@
                                                 </td>
                                                 <td>
                                                     @if ($admin['status'] == 1)
-                                                        <a class="updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}" href="javascript:void(0)"> {{-- Using HTML Custom Attributes. Check admin/js/custom.js --}}
-                                                            <i style="font-size: 25px" class="mdi mdi-bookmark-check" status="Active"></i> {{-- Icons from Skydash Admin Panel Template --}}
+                                                        <a class="updateAdminStatus" id="admin-{{ $admin['id'] }}"
+                                                            admin_id="{{ $admin['id'] }}" href="javascript:void(0)">
+                                                            {{-- Using HTML Custom Attributes. Check admin/js/custom.js --}}
+                                                            <i style="font-size: 25px" class="mdi mdi-bookmark-check"
+                                                                status="Active"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                         </a>
-                                                    @else {{-- if the admin status is inactive --}}
-                                                        <a class="updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}" href="javascript:void(0)"> {{-- Using HTML Custom Attributes. Check admin/js/custom.js --}}
-                                                            <i style="font-size: 25px" class="mdi mdi-bookmark-outline" status="Inactive"></i> {{-- Icons from Skydash Admin Panel Template --}}
+                                                    @else
+                                                        {{-- if the admin status is inactive --}}
+                                                        <a class="updateAdminStatus" id="admin-{{ $admin['id'] }}"
+                                                            admin_id="{{ $admin['id'] }}" href="javascript:void(0)">
+                                                            {{-- Using HTML Custom Attributes. Check admin/js/custom.js --}}
+                                                            <i style="font-size: 25px" class="mdi mdi-bookmark-outline"
+                                                                status="Inactive"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                         </a>
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    @if ($admin['type'] == 'vendor') {{-- if the admin `type` is vendor, show their further details --}}
+                                                    @if ($admin['type'] == 'vendor')
+                                                        {{-- if the admin `type` is vendor, show their further details --}}
                                                         <a href="{{ url('admin/view-vendor-details/' . $admin['id']) }}">
-                                                            <i style="font-size: 25px" class="mdi mdi-file-document"></i> {{-- Icons from Skydash Admin Panel Template --}}
+                                                            <i style="font-size: 25px" class="mdi mdi-file-document"></i>
+                                                            {{-- Icons from Skydash Admin Panel Template --}}
                                                         </a>
                                                     @endif
                                                 </td>
@@ -70,7 +158,8 @@
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-center text-muted text-sm-left d-block d-sm-inline-block">Copyright © 2024. All rights reserved.</span>
+                <span class="text-center text-muted text-sm-left d-block d-sm-inline-block">Copyright © 2024. All rights
+                    reserved.</span>
             </div>
         </footer>
         <!-- partial -->

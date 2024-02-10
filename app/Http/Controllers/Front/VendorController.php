@@ -113,6 +113,69 @@ class VendorController extends Controller
         }
     }
 
+    public function AdminRegister(Request $request) { // the register HTML form submission in vendor login_register.blade.php page    
+        if ($request->isMethod('post')) { // if the register form is submitted
+            $data = $request->all();
+            
+       
+            // Validation (Validation of vendor registration form)    // Manually Creating Validators: https://laravel.com/docs/9.x/validation#manually-creating-validators    
+            $rules = [
+                // <input> "name" attribute => its rule
+                            'name'          => 'required',
+                            'email'         => 'required|email|unique:admins|unique:vendors',  // 'unique:admins' and 'unique:vendors' means check the `admins` table and `vendors` table for the `mobile` uniqueness: https://laravel.com/docs/9.x/validation#rule-unique
+                            'mobile'        => 'required|min:10|numeric|unique:admins|unique:vendors', // 'unique:admins' and 'unique:vendors' means check the `admins` table and `vendors` table for the `mobile` uniqueness: https://laravel.com/docs/9.x/validation#rule-unique    // 'min:10|numeric' is the mobile number validation
+                           
+            ];
+
+            $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
+                // <input> "name" attribute.validation rule => validation rule message
+                                'name.required'             => 'Name is required',
+                                'email.required'            => 'Email is required',
+                                'email.unique'              => 'Email alreay exists',
+                                'mobile.required'           => 'Mobile is required',
+                                'mobile.unique'             => 'Mobile alreay exists',
+                                
+            ];
+
+            $validator = Validator::make($data, $rules, $customMessages); // Manually Creating Validators: https://laravel.com/docs/9.x/validation#manually-creating-validators
+            if ($validator->fails()) { // Manually Creating Validators: https://laravel.com/docs/9.x/validation#manually-creating-validators
+                return \Illuminate\Support\Facades\Redirect::back()->withErrors($validator); // Manually Creating Validators: https://laravel.com/docs/9.x/validation#manually-creating-validators
+            }
+
+
+            // Create Vendor Account (Save the submitted data in BOTH `vendors` and `admins` tables)
+
+            // Note: !!DATABASE TRANSACTION!! Firstly, we'll save the vendor in the `vendors` table, then take the newly generated vendor `id` to use it as a `vendor_id` column value to save the vendor in `admins` table, then we send the Confirmation Mail to the vendor using Mailtrap    
+            // Database Transactions: https://laravel.com/docs/9.x/database#database-transactions
+            DB::beginTransaction();
+
+
+            // Secondly, use the vendor `id` of the `vendors` table to serve a value of the `vendor_id` column in the `admins` table and save the new vendor in the `admins` table
+            $admin = new Admin; // Admin.php model which models (represents) the `admins` database table
+
+            $admin->type      = 'admin';
+            $admin->name      = $data['name'];
+            $admin->mobile    = $data['mobile'];
+            $admin->email     = $data['email'];
+            $admin->password  = bcrypt($data['password']); // hashing the password to store the hashed password in the table (NOT THE PASSWORD ITSELF!!)
+            $admin->status    = 0; // Note: After a new vendor registers a new account, they will remain inactive/disabled (`status` is 0), untill the confirmation email arrives for them and they click the link, and they complete filling their vendor details, then the admin APPROVES them (then status becomes 1)
+
+            // Set Laravel's default timezone to Egypt's (to enter correct `created_at` and `updated_at` records in the database tables) instead of UTC
+            date_default_timezone_set('Africa/Cairo'); // https://www.php.net/manual/en/timezones.php and https://www.php.net/manual/en/timezones.africa.php
+            $admin->created_at = date('Y-m-d H:i:s'); // enter `created_at` MANUALLY!    // Formatting the date for MySQL: https://www.php.net/manual/en/function.date.php
+            $admin->updated_at = date('Y-m-d H:i:s'); // enter `updated_at` MANUALLY!
+
+            $admin->save();
+
+            DB::commit(); // commit the Database Transaction
+
+
+            // Redirect the vendor back with a success message
+            $message = 'Thanks new admin is created .';
+            return redirect()->back()->with('success_message', $message);
+        }
+    }
+
     public function confirmVendor($email) { // Confirm Vendor Account (the confirmation mail sent from 'vendor_confirmation.blade.php) from the mail by Mailtrap         // {code} $code is the base64 encoded vendor email with which they have registered which is a Route Parameters/URL Paramters which we received from the route: https://laravel.com/docs/9.x/routing#required-parameters    // this route is requested (accessed/opened) from inside the mail sent to vendor (vendor_confirmation.blade.php)
         // Note: Vendor CONFIRMATION occurs automatically through vendor clicking on the confirmation link sent in the email, but vendor ACTIVATION (active/inactive/disabled) occurs manually where 'superadmin' or 'admin' activates the `status` from the Admin Panel in 'Admin Management' tab, then clicks Status. Also, Vendor CONFIRMATION is related to the `confirm` columns in BOTH `admins` and `vendors` tables, but vendor ACTIVATION (active/inactive/disabled) is related to the `status` columns in BOTH `admins` and `vendors` tables!
         // Note: Vendor receives THREE emails: the first one when they register (please click on the confirmation link mail (in emails/vendor_confirmation.blade.php)), the second one when they click on the confirmation link sent in the first email (telling them that they have been confirmed and asking them to complete filling in their personal, business and bank details to get ACTIVATED/APPROVED (`status gets 1) (in emails/vendor_confirmed.blade.php)), the third email when the 'admin' or 'superadmin' manually activates (`status` becomes 1) the vendor from the Admin Panel from 'Admin Management' tab, then clicks Status (the email tells them they have been approved (activated and `status` became 1) and asks them to add their products on the website (in emails/vendor_approved.blade.php))
