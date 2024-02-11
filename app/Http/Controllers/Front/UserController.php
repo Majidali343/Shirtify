@@ -80,7 +80,7 @@ class UserController extends Controller
                 return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
                     'type'    => 'success',
                     'url'     => $redirectTo, // redirect user to the Cart cart.blade.php page
-                    'message' => 'Please confirm your email to activate your account!'
+                    'message' => 'Sucessfully registered as a Customer'
                 ]);
 
 

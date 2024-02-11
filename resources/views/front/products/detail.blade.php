@@ -200,6 +200,8 @@
                                 </div>
                             </div>
                         </div>
+                        <button class="button button-outline-secondary"  style="background-color: rgb(57, 194, 57) ">Visual Try</button>
+
                         <div class="section-2-short-description u-s-p-y-14">
                             <h6 class="information-heading u-s-m-b-8">Description:</h6>
                             <p>{{ $productDetails['description'] }}</p>
@@ -231,7 +233,9 @@
 
 
                         </div>
+                        
                         <div class="section-4-sku-information u-s-p-y-14">
+                            
                             <h6 class="information-heading u-s-m-b-8">Sku Information:</h6>
                             <div class="left">
                                 <span>Product Code:</span>
@@ -339,8 +343,9 @@
                                 </div>
                                 <div>
                                     <button class="button button-outline-secondary" type="submit">Add to cart</button>
-                                    <button class="button button-outline-secondary far fa-heart u-s-m-l-6"></button>
-                                    <button class="button button-outline-secondary far fa-envelope u-s-m-l-6"></button>
+                                   
+                                    {{-- <button class="button button-outline-secondary far fa-heart u-s-m-l-6"></button> --}}
+                                    {{-- <button class="button button-outline-secondary far fa-envelope u-s-m-l-6"></button> --}}
                                 </div>
 
 
@@ -348,11 +353,10 @@
                             </div>
                         </form>
 
-
                         {{-- PIN code Availability Check: check if the PIN code of the user's Delivery Address exists in our database (in both `cod_pincodes` and `prepaid_pincodes`) or not via AJAX. Check front/js/custom.js --}} 
-                        <br><br><b>Delivery</b>
+                        {{-- <br><br><b>Delivery</b>
                         <input type="text" id="pincode" placeholder="Check Pincode" required>
-                        <button type="button" id="checkPincode">Go</button> {{-- We'll use that checkPincode HTML id attribute in front/js/custom.js as a handle for jQuery --}}
+                        <button type="button" id="checkPincode">Go</button> We'll use that checkPincode HTML id attribute in front/js/custom.js as a handle for jQuery --}}
 
 
                     </div>
