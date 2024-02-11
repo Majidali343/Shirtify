@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 07, 2024 at 05:59 PM
+-- Generation Time: Feb 11, 2024 at 05:22 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -31,7 +31,7 @@ CREATE TABLE `admins` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
-  `vendor_id` int(11) NOT NULL,
+  `vendor_id` int(11) DEFAULT NULL,
   `mobile` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -48,12 +48,12 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id`, `name`, `type`, `vendor_id`, `mobile`, `email`, `password`, `image`, `confirm`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Ahmed Yahya', 'superadmin', 0, '01255686414', 'admin@admin.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', 'ahmed.jpg', 'No', 1, NULL, '2022-08-17 18:06:05'),
-(2, 'Yasser Fouaad - Vendor', 'vendor', 1, '01259598421', 'yasser@admin.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', '83157.jpg', 'Yes', 1, NULL, '2023-01-02 10:10:56'),
-(3, 'Samir Morsy', 'vendor', 5, '01154572136', 'samir@yahoo.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', NULL, 'No', 1, '2022-10-13 22:55:41', '2022-10-15 21:55:37'),
-(4, 'Ramy Saeed', 'vendor', 6, '01098571935', 'ramy@admin.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', '', 'Yes', 1, '2022-10-14 01:20:03', '2024-02-06 02:37:14'),
-(6, 'Safaa Masoud', 'vendor', 8, '01255374956', 'safaa@vendor.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', NULL, 'Yes', 1, '2022-10-14 18:46:53', '2024-02-06 02:35:19'),
-(7, 'Ghali Shennway', 'vendor', 9, '01154557789', 'ghali@yahoo.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', NULL, 'Yes', 0, '2022-10-14 18:48:28', '2022-10-15 17:10:10'),
-(8, 'javad', 'vendor', 10, '03185601856', 'meherpappur@gmail.com', '$2y$10$RrgVruFDczJiLL3spFbm4ugxNHQxdEMSCoAGSVPZVWSMqF5vQrFtq', '', 'Yes', 1, '2024-02-06 03:11:43', '2024-02-07 01:49:06');
+(2, 'Yasser Fouaad - Vendor', 'vendor', 1, '01259598421', 'yasser@admin.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', '11753.jpg', 'Yes', 1, NULL, '2024-02-11 11:10:20'),
+(8, 'javad', 'vendor', 10, '03185601856', 'meherpappur@gmail.com', '$2y$10$RrgVruFDczJiLL3spFbm4ugxNHQxdEMSCoAGSVPZVWSMqF5vQrFtq', '', 'Yes', 1, '2024-02-06 03:11:43', '2024-02-07 01:49:06'),
+(10, 'zain', 'admin', 12, '03185609822', 'zain@admin.com', '$2y$10$.E.pvaIvW2j6zEPpd3ES4esji.9PfH5wHvivoPp3tQ3WvLlrjlnYK', NULL, 'No', 1, '2024-02-09 03:37:05', '2024-02-10 08:20:34'),
+(11, 'majid', 'vendor', 13, '03085601856', 'ma5788678@gmail.com', '$2y$10$AWFQUc0l6y3oKBJBG9wsYuXrp3Uw0afdVX5TCGcFvkLkhcIJq5DsK', '', 'No', 1, '2024-02-09 03:38:24', '2024-02-09 01:52:55'),
+(12, 'waleed', 'admin', NULL, '03185670822', 'waleed@gmail.com', '$2y$10$cKnLpuWMEXYnfg/CjC453Ou.wwaS81Q84hOt9BnqvTJLDGyzSh0Oq', NULL, 'No', 0, '2024-02-10 11:51:19', '2024-02-10 09:53:05'),
+(13, 'Setosa', 'vendor', 14, '02185651822', 'ibsrahim@gmail.com', '$2y$10$iYmZEScgxVudnDZ4aFasOO79fukMakp9sKxbyVyekX63wA7MgKBsO', NULL, 'No', 0, '2024-02-11 12:46:15', '2024-02-11 12:46:15');
 
 -- --------------------------------------------------------
 
@@ -103,14 +103,11 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Arrow', 1, NULL, '2022-08-26 23:17:18'),
-(2, 'Gap', 1, NULL, '2022-08-26 23:17:18'),
-(3, 'Lee', 1, NULL, '2022-08-26 23:17:19'),
-(4, 'Samsung', 1, NULL, NULL),
-(5, 'LG', 1, NULL, NULL),
-(6, 'Lenovo', 1, NULL, NULL),
-(7, 'MI', 1, NULL, '2022-08-26 23:17:17'),
-(9, 'Others', 1, '2022-08-27 21:39:09', '2022-08-27 21:39:09');
+(1, 'J.', 1, NULL, '2022-08-26 23:17:18'),
+(2, 'mreena', 1, NULL, '2022-08-26 23:17:18'),
+(7, 'sana safinaz', 1, NULL, '2022-08-26 23:17:17'),
+(9, 'Islamabad bridal', 1, '2022-08-27 21:39:09', '2022-08-27 21:39:09'),
+(10, 'Others', 1, NULL, '2022-08-26 23:17:17');
 
 -- --------------------------------------------------------
 
@@ -142,7 +139,8 @@ INSERT INTO `carts` (`id`, `session_id`, `user_id`, `product_id`, `size`, `quant
 (17, '5088d2b9d971513dc3fbf2b98f3dfb97', 0, 4, 'Small', 3, '2022-12-06 20:59:02', '2022-12-06 23:05:50'),
 (42, '5617d343aa7e9b62d5475c899ca3dae3', 1, 5, 'Medium', 1, '2023-03-22 22:24:40', '2023-03-22 23:53:31'),
 (67, 'f945daeb6a96dd25613f5da29ec2b2f1', 0, 2, 'Medium', 1, '2023-04-08 13:29:51', '2023-04-08 13:29:51'),
-(91, '0d797a20b0d28403623dad28f3b93e44', 0, 16, 'medium', 1, '2024-02-07 11:24:41', '2024-02-07 11:24:41');
+(91, '0d797a20b0d28403623dad28f3b93e44', 0, 16, 'medium', 1, '2024-02-07 11:24:41', '2024-02-07 11:24:41'),
+(97, '140f6aa5c405eb7943f0efdfe42f068b', 2, 13, 'large', 1, '2024-02-11 10:58:24', '2024-02-11 10:58:24');
 
 -- --------------------------------------------------------
 
@@ -826,11 +824,9 @@ CREATE TABLE `delivery_addresses` (
 --
 
 INSERT INTO `delivery_addresses` (`id`, `user_id`, `name`, `address`, `city`, `state`, `country`, `pincode`, `mobile`, `status`, `created_at`, `updated_at`) VALUES
-(5, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '141001', '0100995033', 1, '2023-02-25 23:02:09', '2023-04-12 19:25:30'),
-(7, 2, 'Ibrahim', '28 Fouad St.', 'Alexandria', 'Alexandria', 'Egypt', '55663', '01205857145', 1, '2023-02-25 23:11:25', '2023-02-25 23:11:25'),
-(9, 2, 'sgzdgfSZG', 'sgsfg', 'sgsg', 'SGszg', 'Egypt', 'gsrgzsfg', 'zsgzsg', 1, '2023-02-26 21:32:20', '2023-02-26 21:32:20'),
-(10, 1, 'Ramy Yasser', '25 Abbas El-Akkad St.', 'Cairo', 'Cairo', 'Egypt', '542174', '0129568322', 1, '2023-03-22 23:55:04', '2023-03-22 23:55:04'),
-(11, 6, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 1, '2024-02-06 01:45:18', '2024-02-06 01:45:18');
+(11, 6, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 1, '2024-02-06 01:45:18', '2024-02-06 01:45:18'),
+(12, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 1, '2024-02-09 01:08:31', '2024-02-09 01:08:31'),
+(13, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '234348', '0993030034', 1, '2024-02-09 01:19:06', '2024-02-09 01:19:06');
 
 -- --------------------------------------------------------
 
@@ -1078,55 +1074,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `name`, `address`, `city`, `state`, `country`, `pincode`, `mobile`, `email`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `payment_gateway`, `grand_total`, `courier_name`, `tracking_number`, `is_pushed`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, '3dTtKNg7', 220.00, 'Shipped', 'COD', 'COD', 1980.00, '', '', 0, '2023-03-01 20:27:38', '2023-04-16 20:49:33'),
-(2, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, '3dTtKNg7', 220.00, 'New', 'COD', 'COD', 1980.00, '', '', 0, '2023-03-01 21:20:52', '2023-03-04 21:46:33'),
-(3, 2, 'sgzdgfSZG', 'sgsfg', 'sgsg', 'SGszg', 'Egypt', 'gsrgzsfg', 'zsgzsg', 'ibrahim@gmail.com', 0.00, '3dTtKNg7', 220.00, 'New', 'COD', 'COD', 880.00, '', '', 0, '2023-03-01 21:37:23', '2023-03-01 21:37:23'),
-(4, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Shipped', 'Prepaid', 'Paypal', 1080.00, '', '', 1, '2023-03-03 21:34:13', '2023-04-17 22:57:51'),
-(6, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 807.50, '', '', 0, '2023-03-05 20:59:36', '2023-03-05 20:59:36'),
-(7, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 1887.50, '', '', 0, '2023-03-05 21:04:45', '2023-03-05 21:04:45'),
-(9, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 1200.00, '', '', 0, '2023-03-07 18:48:59', '2023-03-07 18:48:59'),
-(10, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 13200.00, '', '', 0, '2023-03-07 19:43:24', '2023-03-07 19:43:24'),
-(11, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Shipped', 'COD', 'COD', 13200.00, 'FedEx', '39539936', 0, '2023-03-07 19:46:03', '2023-03-16 01:55:33'),
-(14, 2, 'Ibrahim', '28 Fouad St.', 'Alexandria', 'Alexandria', 'Egypt', '55663', '01205857145', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 1807.50, NULL, NULL, 0, '2023-03-17 16:49:44', '2023-03-17 16:49:44'),
-(15, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 13080.00, NULL, NULL, 0, '2023-03-17 17:31:40', '2023-03-17 17:31:40'),
-(16, 2, 'sgzdgfSZG', 'sgsfg', 'sgsg', 'SGszg', 'Egypt', 'gsrgzsfg', 'zsgzsg', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 720.00, NULL, NULL, 0, '2023-03-18 14:00:49', '2023-03-18 14:00:49'),
-(17, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 1000.00, NULL, NULL, 0, '2023-03-21 21:51:03', '2023-03-21 21:51:03'),
-(18, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, 'test10', 120.00, 'New', 'COD', 'COD', 1080.00, NULL, NULL, 0, '2023-03-24 01:00:07', '2023-03-24 01:00:07'),
-(19, 2, 'sgzdgfSZG', 'sgsfg', 'sgsg', 'SGszg', 'Egypt', 'gsrgzsfg', 'zsgzsg', 'ibrahim@gmail.com', 0.00, 'ekVpnDJL', 72.00, 'New', 'COD', 'COD', 648.00, NULL, NULL, 0, '2023-03-24 01:18:08', '2023-03-24 01:18:08'),
-(20, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'PayPal', 1200.00, NULL, NULL, 0, '2023-03-25 01:58:45', '2023-03-25 01:58:45'),
-(21, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'PayPal', 1080.00, NULL, NULL, 0, '2023-03-26 02:27:48', '2023-03-26 02:27:48'),
-(22, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'PayPal', 14400.00, NULL, NULL, 0, '2023-03-26 02:28:31', '2023-03-26 02:28:31'),
-(23, 2, 'Ibrahim', '28 Fouad St.', 'Alexandria', 'Alexandria', 'Egypt', '55663', '01205857145', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'PayPal', 12000.00, NULL, NULL, 0, '2023-03-26 02:31:11', '2023-03-26 02:31:11'),
-(24, 2, 'Ibrahim', '28 Fouad St.', 'Alexandria', 'Alexandria', 'Egypt', '55663', '01205857145', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'PayPal', 12000.00, NULL, NULL, 0, '2023-03-26 02:31:48', '2023-03-26 02:31:48'),
-(25, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'Paypal', 14400.00, NULL, NULL, 0, '2023-03-26 02:34:22', '2023-03-26 02:34:22'),
-(26, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'Paypal', 14400.00, NULL, NULL, 0, '2023-03-29 02:52:23', '2023-03-29 02:52:23'),
-(27, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'Paypal', 14400.00, NULL, NULL, 0, '2023-03-30 02:00:43', '2023-03-30 02:00:43'),
-(28, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'Paypal', 14400.00, NULL, NULL, 0, '2023-03-30 11:56:37', '2023-03-30 11:56:37'),
-(29, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'Paypal', 14400.00, NULL, NULL, 0, '2023-03-30 13:12:25', '2023-03-30 13:12:25'),
-(30, 2, 'sgzdgfSZG', 'sgsfg', 'sgsg', 'SGszg', 'Egypt', 'gsrgzsfg', 'zsgzsg', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'Paypal', 14400.00, NULL, NULL, 0, '2023-03-30 13:24:17', '2023-03-30 13:24:17'),
-(31, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'Paypal', 14400.00, NULL, NULL, 0, '2023-03-30 13:43:28', '2023-03-30 13:43:28'),
-(32, 2, 'Ibrahim', '28 Fouad St.', 'Alexandria', 'Alexandria', 'Egypt', '55663', '01205857145', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Pending', 'Prepaid', 'Paypal', 14400.00, NULL, NULL, 0, '2023-03-31 02:22:44', '2023-03-31 02:22:44'),
-(33, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'Paid', 'Prepaid', 'Paypal', 14400.00, NULL, NULL, 0, '2023-03-31 23:23:39', '2023-03-31 23:29:20'),
-(34, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 200.00, NULL, NULL, 'New', 'COD', 'COD', 1400.00, NULL, NULL, 0, '2023-04-04 20:45:06', '2023-04-04 20:45:06'),
-(35, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '57843', '01009950333', 'ibrahim@gmail.com', 200.00, NULL, NULL, 'New', 'COD', 'COD', 2500.00, NULL, NULL, 0, '2023-04-05 14:44:38', '2023-04-05 14:44:38'),
-(36, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '12154', '01195786255', 'ibrahim@gmail.com', 100.00, NULL, NULL, 'New', 'COD', 'COD', 2300.00, NULL, NULL, 0, '2023-04-05 23:57:36', '2023-04-05 23:57:36'),
-(37, 2, 'Ibrahim', '28 Fouad St.', 'Alexandria', 'Alexandria', 'Egypt', '55663', '01205857145', 'ibrahim@gmail.com', 100.00, NULL, NULL, 'New', 'COD', 'COD', 4300.00, NULL, NULL, 0, '2023-04-06 00:00:42', '2023-04-06 00:00:42'),
-(38, 2, 'Ibrahim', '28 Fouad St.', 'Alexandria', 'Alexandria', 'Egypt', '55663', '01205857145', 'ibrahim@gmail.com', 100.00, NULL, NULL, 'New', 'COD', 'COD', 12100.00, NULL, NULL, 0, '2023-04-08 02:40:23', '2023-04-08 02:40:23'),
-(39, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 0.00, 'PHmKm7WL', 100.00, 'New', 'COD', 'COD', 900.00, NULL, NULL, 0, '2023-04-21 23:08:52', '2023-04-21 23:08:52'),
-(40, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '141001', '0100995033', 'ibrahim@gmail.com', 0.00, '3dTtKNg7', 220.00, 'New', 'COD', 'COD', 1980.00, NULL, NULL, 0, '2023-04-22 22:05:22', '2023-04-22 22:05:22'),
-(41, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 100.00, 'Y3gsKF5G', 230.00, 'New', 'COD', 'COD', 2170.00, NULL, NULL, 0, '2023-04-25 13:24:20', '2023-04-25 13:24:20'),
-(42, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 100.00, NULL, NULL, 'Pending', 'Prepaid', 'iyzipay', 4010.00, NULL, NULL, 0, '2023-05-14 19:05:46', '2023-05-14 19:05:46'),
-(43, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 100.00, NULL, NULL, 'Pending', 'Prepaid', 'iyzipay', 4010.00, NULL, NULL, 0, '2023-05-15 20:05:23', '2023-05-15 20:05:23'),
-(44, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 100.00, NULL, NULL, 'Pending', 'Prepaid', 'iyzipay', 4010.00, NULL, NULL, 0, '2023-05-18 17:47:45', '2023-05-18 17:47:45'),
-(45, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 100.00, NULL, NULL, 'Pending', 'Prepaid', 'iyzipay', 4010.00, NULL, NULL, 0, '2023-05-21 13:11:16', '2023-05-21 13:11:16'),
-(50, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 100.00, NULL, NULL, 'New', 'COD', 'COD', 4820.00, NULL, NULL, 0, '2023-06-09 13:19:38', '2023-06-09 13:19:38'),
-(53, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 1000.00, NULL, NULL, 0, '2023-07-26 17:47:50', '2023-07-26 17:47:50'),
-(55, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 1000.00, NULL, NULL, 0, '2023-07-26 20:15:04', '2023-07-26 20:15:04'),
-(56, 2, 'Ibrahim', '16 El Fath St.', 'Cairo', 'Cairo', 'Egypt', '141001', '0119578625', 'ibrahim@gmail.com', 100.00, NULL, NULL, 'Pending', 'Prepaid', 'Paypal', 14500.00, NULL, NULL, 0, '2023-08-07 16:33:30', '2023-08-07 16:33:30'),
-(57, 2, 'Ibrahim', '28 Fouad St.', 'Alexandria', 'Alexandria', 'Egypt', '55663', '01205857145', 'ibrahim@gmail.com', 200.00, NULL, NULL, 'New', 'COD', 'COD', 15410.00, NULL, NULL, 0, '2024-02-04 00:00:43', '2024-02-04 00:00:43'),
-(58, 6, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 'majidali37406@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 1080.00, NULL, NULL, 0, '2024-02-06 01:45:33', '2024-02-06 01:45:33'),
-(59, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '141001', '0100995033', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', -450.00, NULL, NULL, 0, '2024-02-07 03:49:35', '2024-02-07 03:49:35'),
-(60, 2, 'Ibrahim Mohamed', '20 El Nasr St., El Mansheya', 'Alexandria', 'Alexandria', 'Egypt', '141001', '0100995033', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 270.00, NULL, NULL, 0, '2024-02-07 03:52:53', '2024-02-07 03:52:53');
+(68, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 4000.00, NULL, NULL, 0, '2024-02-09 01:32:57', '2024-02-09 01:32:57'),
+(69, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 4000.00, NULL, NULL, 0, '2024-02-09 01:33:33', '2024-02-09 01:33:33'),
+(70, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 'ibrahim@gmail.com', 200.00, NULL, NULL, 'New', 'COD', 'COD', 2120.00, NULL, NULL, 0, '2024-02-09 02:04:42', '2024-02-09 02:04:42'),
+(71, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '234348', '0993030034', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 700.00, NULL, NULL, 0, '2024-02-11 10:50:46', '2024-02-11 10:50:46');
 
 -- --------------------------------------------------------
 
@@ -1263,7 +1214,11 @@ INSERT INTO `orders_products` (`id`, `order_id`, `user_id`, `vendor_id`, `admin_
 (68, 57, 2, 0, 1, 1, 'RN11', 'Redmi Note 11', 'Blue', '128GB-4GB', 14400.00, 1, NULL, NULL, NULL, NULL, '2024-02-04 00:00:43', '2024-02-04 00:00:43'),
 (69, 58, 6, 9, 7, 9, 'BT01', 'Black T-shirt', 'black', 'Small', 1080.00, 1, NULL, NULL, NULL, 0, '2024-02-06 01:45:33', '2024-02-06 01:45:33'),
 (70, 59, 2, 1, 2, 11, '123', 'silver langha', 'Silver', 'large', -450.00, 1, NULL, NULL, NULL, 5, '2024-02-07 03:49:35', '2024-02-07 03:49:35'),
-(71, 60, 2, 1, 2, 11, '123', 'silver langha', 'Silver', 'large', 270.00, 1, NULL, NULL, NULL, 5, '2024-02-07 03:52:53', '2024-02-07 03:52:53');
+(71, 60, 2, 1, 2, 11, '123', 'silver langha', 'Silver', 'large', 270.00, 1, NULL, NULL, NULL, 5, '2024-02-07 03:52:53', '2024-02-07 03:52:53'),
+(72, 68, 2, 10, 2, 17, 'DR34', 'Dark red langha', 'dark red', 'medium', 4000.00, 1, NULL, NULL, NULL, 10, '2024-02-09 01:32:57', '2024-02-09 01:32:57'),
+(73, 69, 2, 10, 2, 17, 'DR34', 'Dark red langha', 'dark red', 'medium', 4000.00, 1, NULL, NULL, NULL, 10, '2024-02-09 01:33:33', '2024-02-09 01:33:33'),
+(74, 70, 2, 13, 11, 19, '23234', 'black t shirt', 'black', 'large', 1920.00, 1, NULL, NULL, NULL, NULL, '2024-02-09 02:04:42', '2024-02-09 02:04:42'),
+(75, 71, 2, 10, 2, 16, 'G874', 'dark green langha', 'Dark Green', 'medium', 700.00, 1, NULL, NULL, NULL, 10, '2024-02-11 10:50:46', '2024-02-11 10:50:46');
 
 -- --------------------------------------------------------
 
@@ -1349,15 +1304,6 @@ CREATE TABLE `payments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `payments`
---
-
-INSERT INTO `payments` (`id`, `order_id`, `user_id`, `payment_id`, `payer_id`, `payer_email`, `amount`, `currency`, `payment_status`, `created_at`, `updated_at`) VALUES
-(1, 31, 2, 'PAYID-MQS4RTI4C4881603G035944H', 'VWDQ9XDE56LRJ', 'sb-z6uip25383523@personal.example.com', 180.00, 'USD', 'approved', '2023-03-30 15:48:20', '2023-03-30 15:48:20'),
-(2, 32, 2, 'PAYID-MQTGAHQ95G50050T1402342Y', 'VWDQ9XDE56LRJ', 'sb-z6uip25383523@personal.example.com', 180.00, 'USD', 'approved', '2023-03-31 02:23:38', '2023-03-31 02:23:38'),
-(3, 33, 2, 'PAYID-MQTYRBY7S9607652J403324M', 'VWDQ9XDE56LRJ', 'sb-z6uip25383523@personal.example.com', 180.00, 'USD', 'approved', '2023-03-31 23:29:20', '2023-03-31 23:29:20');
 
 -- --------------------------------------------------------
 
@@ -1745,17 +1691,18 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `section_id`, `category_id`, `brand_id`, `vendor_id`, `admin_id`, `admin_type`, `product_name`, `product_code`, `product_color`, `product_price`, `product_discount`, `product_weight`, `product_image`, `product_video`, `group_code`, `description`, `operating_system`, `screen_size`, `occasion`, `fit`, `pattern`, `sleeve`, `ram`, `fabric`, `meta_title`, `meta_keywords`, `meta_description`, `is_featured`, `is_bestseller`, `status`, `created_at`, `updated_at`) VALUES
-(3, 1, 6, 1, 0, 1, 'superadmin', 'Arrow T-Shirt', 'AT01', 'Red', 1500, 0, 400, '27416.jpg', '880084420.mp4', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, NULL, 'half sleeve', NULL, 'cotton', 'Pure Cotton T-shirt', 'cotton T-shirt, red T-shirt', 'This is a high quality cotton T-shirt', 'No', 'Yes', 1, '2022-09-02 22:50:41', '2023-05-12 10:25:32'),
-(4, 1, 6, 3, 0, 1, 'superadmin', 'Blue T-Shirt', 'BT01', 'Blue', 2500, 0, 0, '58892.png', NULL, '100', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, NULL, 'half sleeve', NULL, 'polyester', NULL, NULL, NULL, 'No', 'Yes', 1, '2022-09-26 18:44:39', '2023-05-12 10:21:52'),
-(6, 1, 7, 1, 0, 1, 'superadmin', 'Black Shirt', 'BS01', 'Blue', 2000, 10, 100, '20083.jpg', NULL, '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, NULL, 'full sleeve', NULL, 'polyester', NULL, NULL, NULL, 'Yes', 'Yes', 1, '2022-09-28 12:16:45', '2022-10-31 21:56:02'),
-(11, 1, 8, NULL, 1, 2, 'vendor', 'silver langha', '123', 'Silver', 300, 10, 0, '18631.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 00:21:10', '2024-02-07 03:51:11'),
+(3, 1, 6, 1, 10, 1, 'superadmin', 'Arrow T-Shirt', 'AT01', 'Red', 1500, 0, 400, '27416.jpg', '880084420.mp4', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, NULL, 'half sleeve', NULL, 'cotton', 'Pure Cotton T-shirt', 'cotton T-shirt, red T-shirt', 'This is a high quality cotton T-shirt', 'No', 'Yes', 1, '2022-09-02 22:50:41', '2023-05-12 10:25:32'),
+(4, 1, 6, 3, 10, 1, 'superadmin', 'Blue T-Shirt', 'BT01', 'Blue', 2500, 0, 0, '58892.png', NULL, '100', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, NULL, 'half sleeve', NULL, 'polyester', NULL, NULL, NULL, 'No', 'Yes', 1, '2022-09-26 18:44:39', '2023-05-12 10:21:52'),
+(6, 1, 7, 1, 10, 1, 'superadmin', 'Black Shirt', 'BS01', 'Blue', 2000, 10, 100, '20083.jpg', NULL, '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, NULL, 'full sleeve', NULL, 'polyester', NULL, NULL, NULL, 'Yes', 'Yes', 1, '2022-09-28 12:16:45', '2022-10-31 21:56:02'),
+(11, 1, 8, NULL, 10, 2, 'vendor', 'silver langha', '123', 'Silver', 300, 10, 0, '18631.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Yes', 'No', 1, '2024-02-07 00:21:10', '2024-02-09 01:04:53'),
 (12, 1, 8, NULL, 10, 8, 'vendor', 'Dark red langha', '3423', 'dark red', 110, 0, 0, '85968.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 00:55:11', '2024-02-07 03:57:15'),
-(13, 1, 8, NULL, 1, 2, 'vendor', 'Red langha', 'M874', 'Red', 20000, 0, 0, '96518.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:14:18', '2024-02-07 11:14:18'),
-(14, 1, 8, NULL, 1, 2, 'vendor', 'Red langha', 'M1874', 'Red', 4500, 0, 0, '8066.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:16:10', '2024-02-07 11:16:10'),
-(15, 1, 8, NULL, 1, 2, 'vendor', 'white langha', 'W874', 'White', 950, 0, 0, '32720.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:17:43', '2024-02-07 11:17:43'),
-(16, 1, 8, NULL, 1, 2, 'vendor', 'dark green langha', 'G874', 'Dark Green', 700, 0, 0, '44124.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:19:33', '2024-02-07 11:19:33'),
-(17, 1, 8, NULL, 1, 2, 'vendor', 'Dark red langha', 'DR34', 'dark red', 4000, 0, 0, '84162.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:22:17', '2024-02-07 11:22:17'),
-(18, 1, 8, NULL, 1, 2, 'vendor', 'walf white langha', 'WW874', 'walf white', 450, 0, 0, '22111.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:23:43', '2024-02-07 11:23:43');
+(13, 1, 8, NULL, 10, 2, 'vendor', 'Red langha', 'M874', 'Red', 20000, 0, 0, '96518.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:14:18', '2024-02-07 11:14:18'),
+(14, 1, 8, NULL, 10, 2, 'vendor', 'Red langha', 'M1874', 'Red', 4500, 0, 0, '8066.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:16:10', '2024-02-07 11:16:10'),
+(15, 1, 8, NULL, 10, 2, 'vendor', 'white langha', 'W874', 'White', 950, 0, 0, '32720.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:17:43', '2024-02-07 11:17:43'),
+(16, 1, 8, NULL, 10, 2, 'vendor', 'dark green langha', 'G874', 'Dark Green', 700, 0, 0, '44124.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:19:33', '2024-02-07 11:19:33'),
+(17, 1, 8, NULL, 10, 2, 'vendor', 'Dark red langha', 'DR34', 'dark red', 4000, 0, 0, '84162.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:22:17', '2024-02-07 11:22:17'),
+(18, 1, 8, NULL, 10, 2, 'vendor', 'walf white langha', 'WW874', 'walf white', 450, 0, 0, '22111.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-07 11:23:43', '2024-02-07 11:23:43'),
+(19, 1, 7, NULL, 13, 11, 'vendor', 'black t shirt', '23234', 'black', 3000, 20, 200, '91885.jpeg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'No', 'No', 1, '2024-02-09 01:57:53', '2024-02-09 01:57:53');
 
 -- --------------------------------------------------------
 
@@ -1803,9 +1750,10 @@ INSERT INTO `products_attributes` (`id`, `product_id`, `size`, `price`, `stock`,
 (21, 13, 'large', 20000.00, 10, '1M234', 1, '2024-02-07 11:14:55', '2024-02-07 11:14:55'),
 (22, 14, 'medium', 4500.00, 10, '3M342', 1, '2024-02-07 11:16:32', '2024-02-07 11:16:32'),
 (23, 15, 'medium', 950.00, 3, '1R234', 1, '2024-02-07 11:18:12', '2024-02-07 11:18:12'),
-(24, 16, 'medium', 700.00, 10, 'DG993', 1, '2024-02-07 11:20:54', '2024-02-07 11:20:54'),
-(25, 17, 'medium', 4000.00, 3, '1Rd234', 1, '2024-02-07 11:22:40', '2024-02-07 11:22:40'),
-(26, 18, 'large', 450.00, 10, 'ww993', 1, '2024-02-07 11:24:02', '2024-02-07 11:24:02');
+(24, 16, 'medium', 700.00, 9, 'DG993', 1, '2024-02-07 11:20:54', '2024-02-11 10:50:46'),
+(25, 17, 'medium', 4000.00, 1, '1Rd234', 1, '2024-02-07 11:22:40', '2024-02-09 01:33:33'),
+(26, 18, 'large', 450.00, 10, 'ww993', 1, '2024-02-07 11:24:02', '2024-02-07 11:24:02'),
+(27, 19, 'large', 2400.00, 11, '3d34', 1, '2024-02-09 01:58:12', '2024-02-09 02:04:42');
 
 -- --------------------------------------------------------
 
@@ -1920,10 +1868,8 @@ CREATE TABLE `ratings` (
 --
 
 INSERT INTO `ratings` (`id`, `user_id`, `product_id`, `review`, `rating`, `status`, `created_at`, `updated_at`) VALUES
-(1, 2, 1, 'It\'s a great mobile phone!', 4, 1, NULL, '2023-07-05 18:30:11'),
-(3, 2, 2, 'Nice red t-shirt!', 4, 1, '2023-07-08 19:14:14', '2023-07-11 16:31:24'),
-(4, 2, 4, 'Very nice blue t-shirt!', 5, 1, '2023-07-11 16:33:11', '2023-07-11 16:33:34'),
-(5, 34, 4, 'Not bad blue t-shirt!', 2, 1, '2023-07-11 19:37:22', '2023-07-11 19:38:02');
+(6, 2, 18, 'very nice and beautifull', 5, 1, '2024-02-09 00:52:55', '2024-02-10 06:09:58'),
+(7, 2, 15, 'pretty dress', 5, 1, '2024-02-09 00:58:37', '2024-02-10 06:02:01');
 
 -- --------------------------------------------------------
 
@@ -2096,7 +2042,20 @@ INSERT INTO `recently_viewed_products` (`id`, `product_id`, `session_id`, `creat
 (150, 11, '67ae7adb562aba9c7fd45a69133ffda6', NULL, NULL),
 (151, 12, '67ae7adb562aba9c7fd45a69133ffda6', NULL, NULL),
 (152, 11, '8faf36d260df7501927a4162c4da5c0f', NULL, NULL),
-(153, 16, '0d797a20b0d28403623dad28f3b93e44', NULL, NULL);
+(153, 16, '0d797a20b0d28403623dad28f3b93e44', NULL, NULL),
+(154, 15, '01f8bc4755632e8bbe1062e7762e9246', NULL, NULL),
+(155, 17, '01f8bc4755632e8bbe1062e7762e9246', NULL, NULL),
+(156, 14, '01f8bc4755632e8bbe1062e7762e9246', NULL, NULL),
+(157, 11, '01f8bc4755632e8bbe1062e7762e9246', NULL, NULL),
+(158, 18, '01f8bc4755632e8bbe1062e7762e9246', NULL, NULL),
+(159, 16, '01f8bc4755632e8bbe1062e7762e9246', NULL, NULL),
+(160, 17, 'b520c13b3d93e1811d097f85fe0aa54a', NULL, NULL),
+(161, 19, 'c57dcc23e381ed838e94f746ce7a9b12', NULL, NULL),
+(162, 18, '3b154d2218385e1fbae629996ae8ed6f', NULL, NULL),
+(163, 15, '3b154d2218385e1fbae629996ae8ed6f', NULL, NULL),
+(164, 6, '0b9e89de70a4679f6ecf719c2e27d3b5', NULL, NULL),
+(165, 16, '140f6aa5c405eb7943f0efdfe42f068b', NULL, NULL),
+(166, 13, '140f6aa5c405eb7943f0efdfe42f068b', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2310,7 +2269,7 @@ INSERT INTO `shipping_charges` (`id`, `country`, `0_500g`, `501g_1000g`, `1001_2
 (165, 'Northern Mariana Islands', 0.00, 0.00, 0.00, 0.00, 0.00, 1, '2023-03-31 22:00:00', '2023-03-31 22:00:00'),
 (166, 'Norway', 0.00, 0.00, 0.00, 0.00, 0.00, 1, '2023-03-31 22:00:00', '2023-03-31 22:00:00'),
 (167, 'Oman', 0.00, 0.00, 0.00, 0.00, 0.00, 1, '2023-03-31 22:00:00', '2023-03-31 22:00:00'),
-(168, 'Pakistan', 0.00, 0.00, 0.00, 0.00, 0.00, 1, '2023-03-31 22:00:00', '2023-03-31 22:00:00'),
+(168, 'Pakistan', 200.00, 200.00, 200.00, 200.00, 200.00, 1, '2023-03-31 22:00:00', '2023-03-31 22:00:00'),
 (169, 'Palau', 0.00, 0.00, 0.00, 0.00, 0.00, 1, '2023-03-31 22:00:00', '2023-03-31 22:00:00'),
 (170, 'Palestine', 0.00, 0.00, 0.00, 0.00, 0.00, 1, '2023-03-31 22:00:00', '2023-03-31 22:00:00'),
 (171, 'Panama', 0.00, 0.00, 0.00, 0.00, 0.00, 1, '2023-03-31 22:00:00', '2023-03-31 22:00:00'),
@@ -2420,12 +2379,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `address`, `city`, `state`, `country`, `pincode`, `mobile`, `email`, `email_verified_at`, `password`, `status`, `remember_token`, `access_token`, `created_at`, `updated_at`) VALUES
-(1, 'Ramy Morsy', NULL, NULL, NULL, NULL, NULL, '9650000000', 'ramy@yopmail.com', NULL, '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', 1, NULL, NULL, '2022-11-09 21:24:54', '2022-11-09 21:24:54'),
-(2, 'Ibrahim Mohamed', '16 El Fath St.', 'Cairo', 'Great Cairo', 'Egypt', '141001', '01195786255', 'ibrahim@gmail.com', NULL, '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', 1, NULL, NULL, '2022-11-10 21:52:20', '2024-02-03 23:18:10'),
-(3, 'Fouad Yasser', NULL, NULL, NULL, NULL, NULL, '01254873526', 'fouad@gmail.com', NULL, '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', 1, NULL, NULL, '2022-11-10 23:28:20', '2022-11-10 23:28:20'),
-(4, 'Adel Ramez', NULL, NULL, NULL, NULL, NULL, '01052347854', 'adel@gmail.com', NULL, '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', 0, NULL, NULL, '2022-11-14 18:10:24', '2023-01-06 21:52:09'),
-(5, 'Setosa', NULL, NULL, NULL, NULL, NULL, '02185601822', 'user@gmail.com', NULL, '$2y$10$l9mXuTr6okY7piIGXLKmI.YjkqzxrzZDz0RLdWy8EfLLOABuIC/.e', 0, NULL, NULL, '2024-02-06 01:35:54', '2024-02-06 01:35:54'),
-(6, 'Iris viginica', 'Main Simly Dam Road, Bank Colony Barakahu, Islamabad, Islamabad Capital Territory', 'wah', 'Punjab', 'Pakistan', '247011', '03180560181', 'majidali37406@gmail.com', NULL, '$2y$10$9Ne4U2lTV4FhZrw9B8vg1uXVE8ULu9nhAuyP0YJlZ8DL/rgxsWppO', 1, NULL, NULL, '2024-02-06 01:39:54', '2024-02-06 01:44:12');
+(2, 'Ibrahim Mohamed', '16 El Fath St.', 'Cairo', 'Great Cairo', 'Egypt', '141001', '01195786255', 'ibrahim@gmail.com', NULL, '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', 1, NULL, NULL, '2022-11-10 21:52:20', '2024-02-03 23:18:10');
 
 -- --------------------------------------------------------
 
@@ -2455,13 +2409,10 @@ CREATE TABLE `vendors` (
 --
 
 INSERT INTO `vendors` (`id`, `name`, `address`, `city`, `state`, `country`, `pincode`, `mobile`, `email`, `confirm`, `commission`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Yasser Fouaad - Vendor', '17 El-Salam St.', 'Maadi', 'Cairo', 'Egypt', '33315', '01259598421', 'yasser@admin.com', 'No', 5.00, 1, NULL, '2023-04-21 23:21:23'),
-(5, 'Samir Morsy', '9 Fouaad St.', 'Bab Shark', 'Alexandria', 'Egypt', NULL, '01154572136', 'samir@yahoo.com', 'No', 5.00, 1, '2022-10-13 22:55:41', '2023-04-18 14:07:27'),
-(6, 'Ramy Saeed', '25 El-Amana St.', 'Zagazig', 'Sharkia', 'Egypt', '54151', '01098571935', 'ramy@admin.com', 'Yes', 3.00, 1, '2022-10-14 01:20:03', '2024-02-06 02:37:14'),
-(8, 'Safaa Masoud', '14 Talaat Harb St.', 'Abo Tesht', 'Qena', 'Egypt', NULL, '01255374956', 'safaa@vendor.com', 'Yes', 0.00, 1, '2022-10-14 18:46:53', '2024-02-06 02:35:19'),
-(9, 'Ghali Shennway', '8 Fady Safwat St.', 'El Ganayen', 'Suez', 'Egypt', NULL, '01154557789', 'ghali@yahoo.com', 'Yes', 0.00, 1, '2022-10-14 18:48:28', '2022-10-14 18:48:28'),
-(10, 'javad', 'islamabad g13', 'islamabad', 'punjab', 'Pakistan', '12367', '03185601856', 'meherpappur@gmail.com', 'Yes', NULL, 1, '2024-02-06 03:11:43', '2024-02-06 02:34:57'),
-(11, 'Iris virgi', NULL, NULL, NULL, NULL, NULL, '03185601822', 'ssadmin@gmail.com', 'No', NULL, 0, '2024-02-06 03:21:03', '2024-02-06 03:21:03');
+(9, 'Ghali Shennway', '8 Fady Safwat St.', 'El Ganayen', 'Suez', 'Egypt', NULL, '01154557789', 'ghali@yahoo.com', 'Yes', 10.00, 1, '2022-10-14 18:48:28', '2022-10-14 18:48:28'),
+(10, 'javad', 'islamabad g13', 'islamabad', 'punjab', 'Pakistan', '12367', '03185601856', 'meherpappur@gmail.com', 'Yes', 10.00, 1, '2024-02-06 03:11:43', '2024-02-06 02:34:57'),
+(12, 'zain', NULL, NULL, NULL, NULL, NULL, '03185609822', 'zain@admin.com', 'No', NULL, 1, '2024-02-09 03:37:05', '2024-02-09 01:44:16'),
+(13, 'majid', 'cb 46 sadat coloy', 'islamabad', NULL, 'Pakistan', '435435', '03085601856', 'ma5788678@gmail.com', 'No', NULL, 1, '2024-02-09 03:38:24', '2024-02-09 01:50:23');
 
 -- --------------------------------------------------------
 
@@ -2523,7 +2474,8 @@ INSERT INTO `vendors_business_details` (`id`, `vendor_id`, `shop_name`, `shop_ad
 (1, 1, 'Electronics World', '1234-Mall Road', 'New Cairo', 'Cairo', 'Egypt', '00000000000', '1111111111', 'amazon.com.eg', 'yasser@admin.com', 'Aadhar card', '52583.png', '2222222', '3333333337', '444444444', NULL, '2022-10-15 20:11:35'),
 (2, 6, 'B Tech', 'test', 'sgs', 'sgsag', 'Bahrain', '454545', '1111111111', 'sagasga', NULL, 'PAN', '', '3333', '333333333', '11111', NULL, '2022-10-15 21:19:44'),
 (3, 9, 'Ghali Vendor', NULL, 'Cairo', NULL, NULL, NULL, '0113335845', NULL, NULL, 'Passport', '', NULL, NULL, NULL, NULL, NULL),
-(4, 10, 'Ali cloths', 'h12 islamabad', 'islamabad', NULL, NULL, NULL, '9812018301', NULL, NULL, 'Passport', '', NULL, NULL, NULL, NULL, '2024-02-07 01:49:06');
+(4, 10, 'Ali cloths', 'h12 islamabad', 'islamabad', NULL, NULL, NULL, '9812018301', NULL, NULL, 'Passport', '', NULL, NULL, NULL, NULL, '2024-02-07 01:49:06'),
+(5, 13, 'ali cloths', NULL, 'wah', NULL, 'Pakistan', '823408', '0322934490', NULL, NULL, 'Passport', '', NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -2781,7 +2733,7 @@ ALTER TABLE `vendors_business_details`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `banners`
@@ -2793,13 +2745,13 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -2829,7 +2781,7 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT for table `delivery_addresses`
 --
 ALTER TABLE `delivery_addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -2853,31 +2805,37 @@ ALTER TABLE `newsletter_subscribers`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `orders_products`
 --
 ALTER TABLE `orders_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `products_attributes`
 --
 ALTER TABLE `products_attributes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `ratings`
+--
+ALTER TABLE `ratings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `recently_viewed_products`
 --
 ALTER TABLE `recently_viewed_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -2889,13 +2847,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `vendors`
 --
 ALTER TABLE `vendors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `vendors_business_details`
 --
 ALTER TABLE `vendors_business_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
