@@ -66,10 +66,10 @@ class AdminController extends Controller
 
             // Authentication (login/logging in/loggin user in): https://laravel.com/docs/9.x/authentication
             if (Auth::guard('admin')->attempt(['email' => $data['email'], 'password' => $data['password']])) { // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
-                // if (Auth::guard('admin')->user()->type == 'vendor' && Auth::guard('admin')->user()->confirm == 'No') { // if the entity trying to login is 'vendor' and not 'admin' (i.e. `type` column is `vendor`, and `vendor_id` is not zero 0 in `admins` table)    // check the `type` column in the `admins` table for if the logging in user is 'venodr', and check the `confirm` column if the vendor is not yet confirmed (`confirm` = 'No'), then don't allow logging in    // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
-                //     return redirect()->back()->with('error_message', 'Please confirm your email to activate your Vendor Account');
-
-                 if (Auth::guard('admin')->user()->type != 'vendor' && Auth::guard('admin')->user()->status == '0') { // if the entity trying to login is 'admin' and not 'vendor' (i.e. `type` column is `superadmin` or `admin`, and `vendor_id` is zero 0 in `admins` table)    // check the `type` column in the `admins` table for if the logging in user is 'admin' or 'superadmin' (not 'vendor'), and check the `status` column if the 'admin' or 'superadmin' is inactive/disabled (`status` = 0), then don't allow logging in    // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
+                 if (Auth::guard('admin')->user()->type == 'vendor' && Auth::guard('admin')->user()->confirm == 'No') { 
+                    return redirect()->back()->with('error_message', 'Please confirm your email to activate your Vendor Account');
+                 }
+                 if (Auth::guard('admin')->user()->type != 'vendor' && Auth::guard('admin')->user()->status == '0') { 
                     return redirect()->back()->with('error_message', 'Your account is not active');
 
                 } else { // otherwise, login successfully!

@@ -108,7 +108,7 @@ class VendorController extends Controller
 
 
             // Redirect the vendor back with a success message
-            $message = 'Sucessfully registered Vendor';
+            $message = 'please confirm your email';
             return redirect()->back()->with('success_message', $message);
         }
     }
