@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 11, 2024 at 05:22 PM
+-- Generation Time: Feb 19, 2024 at 06:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -48,12 +48,14 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id`, `name`, `type`, `vendor_id`, `mobile`, `email`, `password`, `image`, `confirm`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Ahmed Yahya', 'superadmin', 0, '01255686414', 'admin@admin.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', 'ahmed.jpg', 'No', 1, NULL, '2022-08-17 18:06:05'),
-(2, 'Yasser Fouaad - Vendor', 'vendor', 1, '01259598421', 'yasser@admin.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', '11753.jpg', 'Yes', 1, NULL, '2024-02-11 11:10:20'),
+(2, 'Yasser Fouaad - Vendor', 'vendor', 1, '01259598421', 'yasser@admin.com', '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', '34381.jpg', 'Yes', 1, NULL, '2024-02-16 07:05:23'),
 (8, 'javad', 'vendor', 10, '03185601856', 'meherpappur@gmail.com', '$2y$10$RrgVruFDczJiLL3spFbm4ugxNHQxdEMSCoAGSVPZVWSMqF5vQrFtq', '', 'Yes', 1, '2024-02-06 03:11:43', '2024-02-07 01:49:06'),
 (10, 'zain', 'admin', 12, '03185609822', 'zain@admin.com', '$2y$10$.E.pvaIvW2j6zEPpd3ES4esji.9PfH5wHvivoPp3tQ3WvLlrjlnYK', NULL, 'No', 1, '2024-02-09 03:37:05', '2024-02-10 08:20:34'),
 (11, 'majid', 'vendor', 13, '03085601856', 'ma5788678@gmail.com', '$2y$10$AWFQUc0l6y3oKBJBG9wsYuXrp3Uw0afdVX5TCGcFvkLkhcIJq5DsK', '', 'No', 1, '2024-02-09 03:38:24', '2024-02-09 01:52:55'),
 (12, 'waleed', 'admin', NULL, '03185670822', 'waleed@gmail.com', '$2y$10$cKnLpuWMEXYnfg/CjC453Ou.wwaS81Q84hOt9BnqvTJLDGyzSh0Oq', NULL, 'No', 0, '2024-02-10 11:51:19', '2024-02-10 09:53:05'),
-(13, 'Setosa', 'vendor', 14, '02185651822', 'ibsrahim@gmail.com', '$2y$10$iYmZEScgxVudnDZ4aFasOO79fukMakp9sKxbyVyekX63wA7MgKBsO', NULL, 'No', 0, '2024-02-11 12:46:15', '2024-02-11 12:46:15');
+(13, 'Setosa', 'vendor', 14, '02185651822', 'ibsrahim@gmail.com', '$2y$10$iYmZEScgxVudnDZ4aFasOO79fukMakp9sKxbyVyekX63wA7MgKBsO', NULL, 'No', 1, '2024-02-11 12:46:15', '2024-02-16 07:17:21'),
+(14, 'ali hassan', 'admin', NULL, '03185101856', 'ali@admin.com', '$2y$10$E38vBESs5bQP.pDtdDe.7.67IKKhAKYqTu2lvAKMuxV5.oxVYLxLG', NULL, 'No', 1, '2024-02-16 09:12:46', '2024-02-16 07:13:02'),
+(16, 'sdsd', 'vendor', 16, '031856018101', 'majidali37406@gmail.com', '$2y$10$SwcrCn2s9BKT3dETAr9zm.KyNL1gIH7f4ilvJvLOHNgEzOXnSJ97m', NULL, 'No', 0, '2024-02-18 12:58:36', '2024-02-18 12:58:36');
 
 -- --------------------------------------------------------
 
@@ -826,7 +828,8 @@ CREATE TABLE `delivery_addresses` (
 INSERT INTO `delivery_addresses` (`id`, `user_id`, `name`, `address`, `city`, `state`, `country`, `pincode`, `mobile`, `status`, `created_at`, `updated_at`) VALUES
 (11, 6, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 1, '2024-02-06 01:45:18', '2024-02-06 01:45:18'),
 (12, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 1, '2024-02-09 01:08:31', '2024-02-09 01:08:31'),
-(13, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '234348', '0993030034', 1, '2024-02-09 01:19:06', '2024-02-09 01:19:06');
+(13, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '234348', '0993030034', 1, '2024-02-09 01:19:06', '2024-02-09 01:19:06'),
+(14, 7, 'islamabd', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '847010', '09930300302', 1, '2024-02-16 07:00:36', '2024-02-16 07:00:36');
 
 -- --------------------------------------------------------
 
@@ -1077,7 +1080,8 @@ INSERT INTO `orders` (`id`, `user_id`, `name`, `address`, `city`, `state`, `coun
 (68, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 4000.00, NULL, NULL, 0, '2024-02-09 01:32:57', '2024-02-09 01:32:57'),
 (69, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 4000.00, NULL, NULL, 0, '2024-02-09 01:33:33', '2024-02-09 01:33:33'),
 (70, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '423434', '0993030034', 'ibrahim@gmail.com', 200.00, NULL, NULL, 'New', 'COD', 'COD', 2120.00, NULL, NULL, 0, '2024-02-09 02:04:42', '2024-02-09 02:04:42'),
-(71, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '234348', '0993030034', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 700.00, NULL, NULL, 0, '2024-02-11 10:50:46', '2024-02-11 10:50:46');
+(71, 2, 'javad', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '234348', '0993030034', 'ibrahim@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 700.00, NULL, NULL, 0, '2024-02-11 10:50:46', '2024-02-11 10:50:46'),
+(72, 7, 'islamabd', 'g13 islamabad', 'islamabad', 'punjab', 'Pakistan', '847010', '09930300302', 'najam@gmail.com', 0.00, NULL, NULL, 'New', 'COD', 'COD', 450.00, NULL, NULL, 0, '2024-02-16 07:00:45', '2024-02-16 07:00:45');
 
 -- --------------------------------------------------------
 
@@ -1218,7 +1222,8 @@ INSERT INTO `orders_products` (`id`, `order_id`, `user_id`, `vendor_id`, `admin_
 (72, 68, 2, 10, 2, 17, 'DR34', 'Dark red langha', 'dark red', 'medium', 4000.00, 1, NULL, NULL, NULL, 10, '2024-02-09 01:32:57', '2024-02-09 01:32:57'),
 (73, 69, 2, 10, 2, 17, 'DR34', 'Dark red langha', 'dark red', 'medium', 4000.00, 1, NULL, NULL, NULL, 10, '2024-02-09 01:33:33', '2024-02-09 01:33:33'),
 (74, 70, 2, 13, 11, 19, '23234', 'black t shirt', 'black', 'large', 1920.00, 1, NULL, NULL, NULL, NULL, '2024-02-09 02:04:42', '2024-02-09 02:04:42'),
-(75, 71, 2, 10, 2, 16, 'G874', 'dark green langha', 'Dark Green', 'medium', 700.00, 1, NULL, NULL, NULL, 10, '2024-02-11 10:50:46', '2024-02-11 10:50:46');
+(75, 71, 2, 10, 2, 16, 'G874', 'dark green langha', 'Dark Green', 'medium', 700.00, 1, NULL, NULL, NULL, 10, '2024-02-11 10:50:46', '2024-02-11 10:50:46'),
+(76, 72, 7, 10, 2, 18, 'WW874', 'walf white langha', 'walf white', 'large', 450.00, 1, NULL, NULL, NULL, 10, '2024-02-16 07:00:45', '2024-02-16 07:00:45');
 
 -- --------------------------------------------------------
 
@@ -1752,7 +1757,7 @@ INSERT INTO `products_attributes` (`id`, `product_id`, `size`, `price`, `stock`,
 (23, 15, 'medium', 950.00, 3, '1R234', 1, '2024-02-07 11:18:12', '2024-02-07 11:18:12'),
 (24, 16, 'medium', 700.00, 9, 'DG993', 1, '2024-02-07 11:20:54', '2024-02-11 10:50:46'),
 (25, 17, 'medium', 4000.00, 1, '1Rd234', 1, '2024-02-07 11:22:40', '2024-02-09 01:33:33'),
-(26, 18, 'large', 450.00, 10, 'ww993', 1, '2024-02-07 11:24:02', '2024-02-07 11:24:02'),
+(26, 18, 'large', 450.00, 9, 'ww993', 1, '2024-02-07 11:24:02', '2024-02-16 07:00:45'),
 (27, 19, 'large', 2400.00, 11, '3d34', 1, '2024-02-09 01:58:12', '2024-02-09 02:04:42');
 
 -- --------------------------------------------------------
@@ -2055,7 +2060,8 @@ INSERT INTO `recently_viewed_products` (`id`, `product_id`, `session_id`, `creat
 (163, 15, '3b154d2218385e1fbae629996ae8ed6f', NULL, NULL),
 (164, 6, '0b9e89de70a4679f6ecf719c2e27d3b5', NULL, NULL),
 (165, 16, '140f6aa5c405eb7943f0efdfe42f068b', NULL, NULL),
-(166, 13, '140f6aa5c405eb7943f0efdfe42f068b', NULL, NULL);
+(166, 13, '140f6aa5c405eb7943f0efdfe42f068b', NULL, NULL),
+(167, 18, 'ba2d71431dc1a0f7311f3bc1f5493a55', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2379,7 +2385,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `address`, `city`, `state`, `country`, `pincode`, `mobile`, `email`, `email_verified_at`, `password`, `status`, `remember_token`, `access_token`, `created_at`, `updated_at`) VALUES
-(2, 'Ibrahim Mohamed', '16 El Fath St.', 'Cairo', 'Great Cairo', 'Egypt', '141001', '01195786255', 'ibrahim@gmail.com', NULL, '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', 1, NULL, NULL, '2022-11-10 21:52:20', '2024-02-03 23:18:10');
+(2, 'Ibrahim Mohamed', '16 El Fath St.', 'Cairo', 'Great Cairo', 'Egypt', '141001', '01195786255', 'ibrahim@gmail.com', NULL, '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', 1, NULL, NULL, '2022-11-10 21:52:20', '2024-02-03 23:18:10'),
+(7, 'muhammad najam', NULL, NULL, NULL, NULL, NULL, '03189604856', 'najam@gmail.com', NULL, '$2y$10$l1if2sOpS5mcZ2LEQ3upAe/ovC4DXiLJnYgvMs8f3qv2dImdSYsMy', 1, NULL, NULL, '2024-02-16 06:55:10', '2024-02-16 06:55:10');
 
 -- --------------------------------------------------------
 
@@ -2412,7 +2419,8 @@ INSERT INTO `vendors` (`id`, `name`, `address`, `city`, `state`, `country`, `pin
 (9, 'Ghali Shennway', '8 Fady Safwat St.', 'El Ganayen', 'Suez', 'Egypt', NULL, '01154557789', 'ghali@yahoo.com', 'Yes', 10.00, 1, '2022-10-14 18:48:28', '2022-10-14 18:48:28'),
 (10, 'javad', 'islamabad g13', 'islamabad', 'punjab', 'Pakistan', '12367', '03185601856', 'meherpappur@gmail.com', 'Yes', 10.00, 1, '2024-02-06 03:11:43', '2024-02-06 02:34:57'),
 (12, 'zain', NULL, NULL, NULL, NULL, NULL, '03185609822', 'zain@admin.com', 'No', NULL, 1, '2024-02-09 03:37:05', '2024-02-09 01:44:16'),
-(13, 'majid', 'cb 46 sadat coloy', 'islamabad', NULL, 'Pakistan', '435435', '03085601856', 'ma5788678@gmail.com', 'No', NULL, 1, '2024-02-09 03:38:24', '2024-02-09 01:50:23');
+(13, 'majid', 'cb 46 sadat coloy', 'islamabad', NULL, 'Pakistan', '435435', '03085601856', 'ma5788678@gmail.com', 'No', NULL, 1, '2024-02-09 03:38:24', '2024-02-09 01:50:23'),
+(16, 'sdsd', NULL, NULL, NULL, NULL, NULL, '031856018101', 'majidali37406@gmail.com', 'No', NULL, 0, '2024-02-18 12:58:36', '2024-02-18 12:58:36');
 
 -- --------------------------------------------------------
 
@@ -2733,7 +2741,7 @@ ALTER TABLE `vendors_business_details`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `banners`
@@ -2751,7 +2759,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -2781,7 +2789,7 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT for table `delivery_addresses`
 --
 ALTER TABLE `delivery_addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -2805,13 +2813,13 @@ ALTER TABLE `newsletter_subscribers`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `orders_products`
 --
 ALTER TABLE `orders_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -2835,19 +2843,19 @@ ALTER TABLE `ratings`
 -- AUTO_INCREMENT for table `recently_viewed_products`
 --
 ALTER TABLE `recently_viewed_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `vendors`
 --
 ALTER TABLE `vendors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `vendors_business_details`
